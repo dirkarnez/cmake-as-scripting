@@ -1,6 +1,6 @@
 function(input RETURN_VARIABLE)
     execute_process(
-        COMMAND bash -c "read -p \"Input:\" temp && echo $temp"
+        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/readinput
         OUTPUT_VARIABLE TEMP
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         OUTPUT_STRIP_TRAILING_WHITESPACE)

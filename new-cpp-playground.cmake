@@ -1,4 +1,4 @@
-include("secrets.cmake" OPTIONAL RESULT_VARIABLE SECRET_IS_FOUND)
+include("common/secrets.cmake" OPTIONAL RESULT_VARIABLE SECRET_IS_FOUND)
 
 if (SECRET_IS_FOUND STREQUAL "NOTFOUND")
     message("???")
@@ -6,7 +6,7 @@ if (SECRET_IS_FOUND STREQUAL "NOTFOUND")
 endif()
 
 
-include("utils.cmake" OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+include("common/utils.cmake" OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message("???")
     # generate one

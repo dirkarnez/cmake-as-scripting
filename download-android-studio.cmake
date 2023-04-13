@@ -1,15 +1,10 @@
-set(ANDROID_STUDIO_LOCATION $ENV{USERPROFILE}/Downloads/android-studio-2022.1.1.21-windows.zip)
 
-file(DOWNLOAD 
-    "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.1.1.21/android-studio-2022.1.1.21-windows.zip" 
-    ${ANDROID_STUDIO_LOCATION}
-    INACTIVITY_TIMEOUT 5
-    STATUS ANDROID_STUDIO_STATUS_TUPLE)
-
-list(GET ANDROID_STUDIO_STATUS_TUPLE 0 ANDROID_STUDIO_STATUS)
-
-if (ANDROID_STUDIO_STATUS EQUAL 0)
-    message("SUCCESS")
-else()
-    message("NOT SUCCESS")
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+    message("???")
+    # generate one
 endif()
+
+download_file("https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2022.1.1.21/android-studio-2022.1.1.21-windows.zip")
+
+# com.squareup.retrofit2:retrofit:2.9.0

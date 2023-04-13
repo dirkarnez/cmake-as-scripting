@@ -12,3 +12,26 @@ function(sleep)
     execute_process(
         COMMAND bash -c "sleep 5s")
 endfunction()
+
+function(download_file URL)
+    get_filename_component(FILE_NAME_TO_SAVE 
+        ${URL}
+        NAME)
+
+    set(DOWNLOAD_LOCATION $ENV{USERPROFILE}/Downloads/${FILE_NAME_TO_SAVE})
+
+
+    file(DOWNLOAD 
+        ${URL}
+        ${DOWNLOAD_LOCATION}
+        INACTIVITY_TIMEOUT 5
+        STATUS DOWNLOAD_STATUS_TUPLE)
+
+    list(GET DOWNLOAD_STATUS_TUPLE 0 DOWNLOAD_STATUS)
+
+    if (DOWNLOAD_STATUS EQUAL 0)
+        message("SUCCESS \"${FILE_NAME_TO_SAVE}\"")
+    else()
+        message("NOT SUCCESS")
+    endif()
+endfunction()

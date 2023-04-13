@@ -14,12 +14,15 @@ function(sleep)
 endfunction()
 
 function(download_file URL)
-    get_filename_component(FILE_NAME_TO_SAVE 
+    get_filename_component(FILE_NAME_WITH_EXTENSION_TO_SAVE 
         ${URL}
         NAME)
 
-    set(DOWNLOAD_LOCATION $ENV{USERPROFILE}/Downloads/${FILE_NAME_TO_SAVE})
+    get_filename_component(FILE_NAME_WITHOUT_EXTENSION
+        ${URL}
+        NAME_WLE)
 
+    set(DOWNLOAD_LOCATION $ENV{USERPROFILE}/Downloads/${FILE_NAME_WITH_EXTENSION_TO_SAVE})
 
     file(DOWNLOAD 
         ${URL}
@@ -30,7 +33,10 @@ function(download_file URL)
     list(GET DOWNLOAD_STATUS_TUPLE 0 DOWNLOAD_STATUS)
 
     if (DOWNLOAD_STATUS EQUAL 0)
-        message("SUCCESS \"${FILE_NAME_TO_SAVE}\"")
+        message("SUCCESS \"${FILE_NAME_WITH_EXTENSION_TO_SAVE}\"")
+        file(ARCHIVE_EXTRACT 
+            INPUT ${DOWNLOAD_LOCATION}
+            DESTINATION $ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION})
     else()
         message("NOT SUCCESS")
     endif()

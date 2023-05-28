@@ -13,6 +13,7 @@ SET PATH=^
 %DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
 %PYTHON_DIR%;^
 %PYTHON_DIR%\Scripts;^
+P:\Downloads\ffmpeg-2021-10-28-git-e84c83ef98-full_build\bin;^
 %SystemRoot%\System32;
 
 @REM set PATH=^

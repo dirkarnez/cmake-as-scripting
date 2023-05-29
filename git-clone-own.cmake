@@ -16,6 +16,10 @@ input(REPO_NAME)
 message(${REPO_NAME})
 
 execute_process(
+	COMMAND git config --global credential.helper ""
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+	
+execute_process(
     COMMAND git 
     "clone" 
     "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"

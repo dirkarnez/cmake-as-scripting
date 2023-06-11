@@ -24,3 +24,7 @@ execute_process(
     "clone" 
     "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
     WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
+    
+execute_process(
+	COMMAND $ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd
+	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads/${REPO_NAME})

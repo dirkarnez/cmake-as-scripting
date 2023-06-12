@@ -21,10 +21,10 @@ execute_process(
 	
 execute_process(
     COMMAND git 
-    "clone" 
+    clone
     "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
     WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
     
 execute_process(
-	COMMAND $ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd
+	COMMAND cmd /c "$ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads/${REPO_NAME})

@@ -26,5 +26,5 @@ execute_process(
     WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
     
 execute_process(
-	COMMAND cmd /c "$ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd"
+	COMMAND cmd.exe /c $ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd .
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads/${REPO_NAME})

@@ -15,6 +15,7 @@ SET PATH=^
 %PYTHON_DIR%;^
 %PYTHON_DIR%\Scripts;^
 P:\Downloads\ffmpeg-2021-10-28-git-e84c83ef98-full_build\bin;^
+%DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 
 @REM set PATH=^

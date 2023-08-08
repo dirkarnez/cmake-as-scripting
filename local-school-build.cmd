@@ -14,7 +14,7 @@ SET PATH=^
 %DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
 %PYTHON_DIR%;^
 %PYTHON_DIR%\Scripts;^
-%DOWNLOADS_DIR%\ffmpeg-6.0-full_build-shared\bin;^
+%DOWNLOADS_DIR%\ffmpeg-6.0-full_build-shared\ffmpeg-6.0-full_build-shared\bin;^
 %DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 

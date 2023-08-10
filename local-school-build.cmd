@@ -18,6 +18,8 @@ SET PATH=^
 %DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 
+set GOPATH=P:\Downloads\gopath
+
 @REM set PATH=^
 @REM D:\Softwares\PortableGit-2.35.1.2-64-bit\bin;^
 @REM D:\Softwares\x86_64-8.1.0-release-win32-posix-rt_v6-rev0\mingw64;^

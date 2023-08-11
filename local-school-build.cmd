@@ -12,6 +12,7 @@ SET PATH=^
 %DOWNLOADS_DIR%\x86_64-8.1.0-release-posix-seh-rt_v6-rev0;^
 %DOWNLOADS_DIR%\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\bin;^
 %DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
+%DOWNLOADS_DIR%\node-v18.17.1-win-x64;^
 %PYTHON_DIR%;^
 %PYTHON_DIR%\Scripts;^
 %DOWNLOADS_DIR%\ffmpeg-6.0-full_build-shared\ffmpeg-6.0-full_build-shared\bin;^

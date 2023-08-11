@@ -26,5 +26,10 @@ execute_process(
     WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez)
     
 execute_process(
+	COMMAND cmd /c "start explorer.exe"
+	WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez/${REPO_NAME})
+	
+
+execute_process(
 	COMMAND cmd.exe /c $ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd .
 	WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez/${REPO_NAME})

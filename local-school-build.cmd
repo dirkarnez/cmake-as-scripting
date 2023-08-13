@@ -21,12 +21,15 @@ SET PATH=^
 
 set GOPATH=P:\Downloads\gopath
 
-@REM set PATH=^
-@REM D:\Softwares\PortableGit-2.35.1.2-64-bit\bin;^
-@REM D:\Softwares\x86_64-8.1.0-release-win32-posix-rt_v6-rev0\mingw64;^
-@REM D:\Softwares\x86_64-8.1.0-release-win32-posix-rt_v6-rev0\mingw64\bin;^
-@REM D:\Softwares\cmake-3.22.2-windows-x86_64\bin;^
-@REM %SystemRoot%\System32;
+set VSCODE_EXTENSION_PATH=P:\Downloads\vscode-data\extensions
+set VSCODE_USER_DATA_PATH=P:\Downloads\vscode-data\user-data
+
+if not exist %VSCODE_EXTENSION_PATH% (
+	mkdir %VSCODE_EXTENSION_PATH%
+)
+if not exist %VSCODE_USER_DATA_PATH% (
+	mkdir %VSCODE_USER_DATA_PATH%
+)
 
 cmake.exe -P %1
 pause

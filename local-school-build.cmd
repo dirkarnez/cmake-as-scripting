@@ -13,17 +13,24 @@ SET PATH=^
 %DOWNLOADS_DIR%\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin;^
 %DOWNLOADS_DIR%\ffmpeg-master-latest-win64-gpl-shared\bin;^
 %DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
+%DOWNLOADS_DIR%\node-v18.17.1-win-x64;^
 %PYTHON_DIR%;^
 %PYTHON_DIR%\Scripts;^
-P:\Downloads\ffmpeg-2021-10-28-git-e84c83ef98-full_build\bin;^
+%DOWNLOADS_DIR%\ffmpeg-6.0-full_build-shared\ffmpeg-6.0-full_build-shared\bin;^
+%DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 
-@REM set PATH=^
-@REM D:\Softwares\PortableGit-2.35.1.2-64-bit\bin;^
-@REM D:\Softwares\x86_64-8.1.0-release-win32-posix-rt_v6-rev0\mingw64;^
-@REM D:\Softwares\x86_64-8.1.0-release-win32-posix-rt_v6-rev0\mingw64\bin;^
-@REM D:\Softwares\cmake-3.22.2-windows-x86_64\bin;^
-@REM %SystemRoot%\System32;
+set GOPATH=P:\Downloads\gopath
+
+set VSCODE_EXTENSION_PATH=P:\Downloads\vscode-data\extensions
+set VSCODE_USER_DATA_PATH=P:\Downloads\vscode-data\user-data
+
+if not exist %VSCODE_EXTENSION_PATH% (
+	mkdir %VSCODE_EXTENSION_PATH%
+)
+if not exist %VSCODE_USER_DATA_PATH% (
+	mkdir %VSCODE_USER_DATA_PATH%
+)
 
 cmake.exe -P %1
 pause

@@ -19,17 +19,5 @@ SET PATH=^
 %DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 
-set GOPATH=P:\Downloads\gopath
-
-set VSCODE_EXTENSION_PATH=P:\Downloads\vscode-data\extensions
-set VSCODE_USER_DATA_PATH=P:\Downloads\vscode-data\user-data
-
-if not exist %VSCODE_EXTENSION_PATH% (
-	mkdir %VSCODE_EXTENSION_PATH%
-)
-if not exist %VSCODE_USER_DATA_PATH% (
-	mkdir %VSCODE_USER_DATA_PATH%
-)
-
 cmake.exe -P %1
 pause

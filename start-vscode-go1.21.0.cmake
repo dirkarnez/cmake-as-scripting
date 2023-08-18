@@ -6,7 +6,7 @@ set(ENV{VSCODE_EXTENSION_PATH} "P:\\Downloads\\vscode-data\\extensions")
 set(ENV{VSCODE_USER_DATA_PATH} "P:\\Downloads\\vscode-data\\user-data")
 
 set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
-set(ENV{PATH} "$ENV{PATH};${GOROOT}\\bin")
+set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
 set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
 set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0")
 set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\bin")

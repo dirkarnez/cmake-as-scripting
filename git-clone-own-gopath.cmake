@@ -30,7 +30,9 @@ execute_process(
 	COMMAND cmd /c "start explorer.exe"
 	WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez/${REPO_NAME})
 	
-
 execute_process(
-	COMMAND cmd.exe /c $ENV{USERPROFILE}/Downloads/VSCode-win32-x64-1.66.1/Code.cmd .
+	COMMAND "${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
+	--extensions-dir "$ENV{VSCODE_EXTENSION_PATH}" 
+	--user-data-dir "$ENV{VSCODE_USER_DATA_PATH}"
+	"."
 	WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez/${REPO_NAME})

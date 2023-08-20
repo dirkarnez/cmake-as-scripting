@@ -25,10 +25,6 @@ execute_process(
     clone
     "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
     WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez)
-    
-execute_process(
-	COMMAND cmd /c "start explorer.exe"
-	WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez/${REPO_NAME})
 	
 execute_process(
 	COMMAND "${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 

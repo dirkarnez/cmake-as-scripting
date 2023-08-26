@@ -13,7 +13,8 @@ endif()
 set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
 
 execute_process(
-	COMMAND "${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
+	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+	"${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
 	--extensions-dir "$ENV{VSCODE_EXTENSION_PATH}" 
 	--user-data-dir "$ENV{VSCODE_USER_DATA_PATH}"
 	"."

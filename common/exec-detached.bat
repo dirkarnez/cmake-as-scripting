@@ -1,2 +1,3 @@
 @echo off
 start "" %*
+exit

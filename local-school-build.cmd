@@ -21,4 +21,4 @@ SET PATH=^
 %SystemRoot%\System32;
 
 cmake.exe -P %1
-pause
+exit

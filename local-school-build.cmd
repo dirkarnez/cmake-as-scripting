@@ -20,5 +20,4 @@ SET PATH=^
 %DOWNLOADS_DIR%\yt-dlp_win;^
 %SystemRoot%\System32;
 
-cmake.exe -P %1
-exit
+cmake.exe -P %1 || pause

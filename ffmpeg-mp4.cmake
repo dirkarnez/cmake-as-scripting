@@ -14,14 +14,11 @@ message(${crf})
 # file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
 # message(${file})
 
-
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
+
+set(ENV{PATH} "$ENV{USERPROFILE}\\Downloads\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
 
 execute_process(
 	COMMAND ffmpeg -i "${file}" -c:v libx264 -crf ${crf} -c:a aac "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp4"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-
-
-

@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://portableapps.com/redir2/?a=OpenShotPortable&s=s&d=pa&f=OpenShotPortable_3.1.1.paf.exe")
+download_file_and_run("https://download2.portableapps.com/portableapps/OpenShotPortable/OpenShotPortable_3.1.1.paf.exe")

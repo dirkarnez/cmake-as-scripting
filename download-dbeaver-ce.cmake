@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip")
+download_file_and_uncompress("https://dbeaver.io/files/dbeaver-ce-latest-win32.win32.x86_64.zip")

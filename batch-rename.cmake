@@ -4,7 +4,7 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-# download_file("https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.2-win.zip")
+# download_file_and_uncompress("https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.2-win.zip")
 
 message("Directory")
 input(DIRECTORY)

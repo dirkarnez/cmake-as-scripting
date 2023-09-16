@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://download.biolab.si/download/files/Orange3-3.35.0.zip")
+download_file_and_uncompress("https://download.biolab.si/download/files/Orange3-3.35.0.zip")

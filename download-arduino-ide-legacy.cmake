@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://downloads.arduino.cc/arduino-1.8.19-windows.zip")
+download_file_and_uncompress("https://downloads.arduino.cc/arduino-1.8.19-windows.zip")

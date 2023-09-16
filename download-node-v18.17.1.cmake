@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://nodejs.org/dist/v18.17.1/node-v18.17.1-win-x64.zip")
+download_file_and_uncompress("https://nodejs.org/dist/v18.17.1/node-v18.17.1-win-x64.zip")

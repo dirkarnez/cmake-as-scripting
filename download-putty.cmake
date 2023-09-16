@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://the.earth.li/~sgtatham/putty/latest/w64/putty.zip")
+download_file_and_uncompress("https://the.earth.li/~sgtatham/putty/latest/w64/putty.zip")

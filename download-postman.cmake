@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://github.com/portapps/postman-portable/releases/download/10.15.0-57/postman-portable-win64-10.15.0-57.7z")
+download_file_and_uncompress("https://github.com/portapps/postman-portable/releases/download/10.15.0-57/postman-portable-win64-10.15.0-57.7z")

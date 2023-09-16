@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://github.com/WinMerge/winmerge/releases/download/v2.16.32/winmerge-2.16.32-x64-exe.zip")
+download_file_and_uncompress("https://github.com/WinMerge/winmerge/releases/download/v2.16.32/winmerge-2.16.32-x64-exe.zip")

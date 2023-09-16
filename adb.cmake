@@ -4,7 +4,7 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://dl.google.com/android/repository/platform-tools-latest-windows.zip")
+download_file_and_uncompress("https://dl.google.com/android/repository/platform-tools-latest-windows.zip")
 
 set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}/Downloads/platform-tools-latest-windows/platform-tools")
 

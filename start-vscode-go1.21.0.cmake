@@ -7,7 +7,7 @@ endif()
 
 set(ENV{GOROOT} "${DOWNLOADS_DIR}\\go1.21.0.windows-amd64\\go")
 if(NOT EXISTS $ENV{GOROOT})
-	download_file("https://go.dev/dl/go1.21.0.windows-amd64.zip")
+	download_file_and_uncompress("https://go.dev/dl/go1.21.0.windows-amd64.zip")
 endif()
 
 set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")

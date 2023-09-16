@@ -4,5 +4,5 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://github.com/kylon/Sharedown/releases/download/5.3.1/sharedown-5.3.1-win.zip")
+download_file_and_uncompress("https://github.com/kylon/Sharedown/releases/download/5.3.1/sharedown-5.3.1-win.zip")
 

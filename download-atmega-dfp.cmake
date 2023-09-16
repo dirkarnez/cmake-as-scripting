@@ -5,7 +5,7 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
 endif()
 
 # search "ATmega_DFP" on http://packs.download.atmel.com/ 
-download_file("http://packs.download.atmel.com/Atmel.ATmega_DFP.2.1.506.atpack")
+download_file_and_uncompress("http://packs.download.atmel.com/Atmel.ATmega_DFP.2.1.506.atpack")
 
 
 

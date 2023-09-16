@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://github.com/CieNTi/serial_port_plotter/releases/download/v1.3.0/serial_port_plotter_Win_1.3.0.zip")
+download_file_and_uncompress("https://github.com/CieNTi/serial_port_plotter/releases/download/v1.3.0/serial_port_plotter_Win_1.3.0.zip")

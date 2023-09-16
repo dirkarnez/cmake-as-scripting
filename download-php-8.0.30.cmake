@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://windows.php.net/downloads/releases/php-8.0.30-Win32-vs16-x64.zip")
+download_file_and_uncompress("https://windows.php.net/downloads/releases/php-8.0.30-Win32-vs16-x64.zip")

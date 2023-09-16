@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file("https://winscp.net/download/WinSCP-6.1.1-Portable.zip")
+download_file_and_uncompress("https://winscp.net/download/WinSCP-6.1.1-Portable.zip")

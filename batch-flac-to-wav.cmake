@@ -4,7 +4,12 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.2-win.zip")
+if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/flac-1.4.2-win/flac-1.4.2-win/Win64/flac.exe")
+	download_file_and_uncompress("https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.2-win.zip")
+else()
+	message("found flac")
+endif()
+
 
 message("Directory")
 input(DIRECTORY)

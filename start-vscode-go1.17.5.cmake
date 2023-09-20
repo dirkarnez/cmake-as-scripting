@@ -5,11 +5,13 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-set(ENV{GOROOT} "${DOWNLOADS_DIR}\\go1.17.5.windows-amd64\\go")
+
 if(NOT EXISTS $ENV{GOROOT})
 	download_file_and_uncompress("https://go.dev/dl/go1.17.5.windows-amd64.zip")
 endif()
 
+set(ENV{GOPATH} "P:\\Downloads\\gopath")
+set(ENV{GOROOT} "${DOWNLOADS_DIR}\\go1.17.5.windows-amd64\\go")
 set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
 
 execute_process(

@@ -14,7 +14,6 @@ if("${DOMAIN}" STREQUAL "hh\\")
 	message("in school")
 
 	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
-	set(ENV{GOPATH} "P:\\Downloads\\gopath")
 	
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
@@ -35,10 +34,8 @@ if("${DOMAIN}" STREQUAL "hh\\")
 		# Create the directory
 		file(MAKE_DIRECTORY $ENV{VSCODE_USER_DATA_PATH})
 	endif()
-	
 
 	message("${DOWNLOADS_DIR}")
-	message("$ENV{GOROOT}")
 	message("$ENV{PATH}")
 	message("$ENV{VSCODE_EXTENSION_PATH}")
 	message("$ENV{VSCODE_USER_DATA_PATH}")

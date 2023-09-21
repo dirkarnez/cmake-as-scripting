@@ -4,4 +4,4 @@ else()
 	message("found flac")
 endif()
 
-set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\flac-1.4.2-win\\flac-1.4.2-win\\Win64")
+set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\flac-1.4.2-win\\flac-1.4.2-win\\Win64")

@@ -4,6 +4,12 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/yt-dlp.cmake OPTIONAL RESULT_VARIABLE YT_DLP_IS_FOUND)
+if (YT_DLP_IS_FOUND STREQUAL "NOTFOUND")
+	message("???")
+	# generate one
+endif()
+
 message("file")
 input(file)
 

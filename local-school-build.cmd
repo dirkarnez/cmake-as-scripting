@@ -17,9 +17,7 @@ SET PATH=^
 @REM %DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
 @REM %DOWNLOADS_DIR%\node-v18.17.1-win-x64;^
 @REM %PYTHON_DIR%;^
-@REM %PYTHON_DIR%\Scripts;^
-@REM %DOWNLOADS_DIR%\ffmpeg-6.0-full_build-shared\ffmpeg-6.0-full_build-shared\bin;^
-@REM %DOWNLOADS_DIR%\yt-dlp_win;^
+@REM %PYTHON_DIR%\Scripts;
 
 
 cmake.exe -P %1 || pause

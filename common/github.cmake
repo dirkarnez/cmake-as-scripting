@@ -24,7 +24,7 @@ function(new_repo from_template)
         "https://api.github.com/repos/dirkarnez/${from_template}/generate"
         "-d"
         "{\"owner\":\"dirkarnez\",\"name\":\"${NEW_REPO_NAME}\"}"
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+        WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
 
     # GitHub needs some time
     sleep()
@@ -33,6 +33,6 @@ function(new_repo from_template)
         COMMAND git 
         "clone" 
         "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${NEW_REPO_NAME}.git"
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+        WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
 endfunction()
 

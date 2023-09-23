@@ -13,10 +13,22 @@ function(sleep)
         COMMAND bash -c "sleep 5s")
 endfunction()
 
-function(download_file_and_uncompress URL)
+function(get_filename_from_url URL RETURN_VARIABLE)
     get_filename_component(FILE_NAME_WITH_EXTENSION_TO_SAVE 
         ${URL}
         NAME)
+    set(${RETURN_VARIABLE} ${FILE_NAME_WITH_EXTENSION_TO_SAVE} PARENT_SCOPE)
+endfunction()
+
+function(get_filename_from_url_without_extension URL RETURN_VARIABLE)
+    get_filename_component(FILE_NAME_WITHOUT_EXTENSION
+        ${URL}
+        NAME_WLE)
+    set(${RETURN_VARIABLE} ${FILE_NAME_WITHOUT_EXTENSION} PARENT_SCOPE)
+endfunction()
+
+function(download_file_and_uncompress URL)
+    get_filename_from_url(${URL} FILE_NAME_WITH_EXTENSION_TO_SAVE)
 
     get_filename_component(FILE_NAME_WITHOUT_EXTENSION
         ${URL}

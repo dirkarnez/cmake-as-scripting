@@ -1,18 +1,16 @@
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
-    message("???")
-    # generate one
+    message(FATAL_ERROR "UTILS_IS_FOUND: ${${UTILS_IS_FOUND}}")
 endif()
 
 
-if(NOT EXISTS $ENV{GOROOT})
-	download_file_and_uncompress("https://go.dev/dl/go1.17.5.windows-amd64.zip")
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/go.cmake OPTIONAL RESULT_VARIABLE GO_IS_FOUND)
+if (GO_IS_FOUND STREQUAL "NOTFOUND")
+	message(FATAL_ERROR "GO_IS_FOUND: ${${GO_IS_FOUND}}")
 endif()
 
-set(ENV{GOPATH} "P:\\Downloads\\gopath")
-set(ENV{GOROOT} "${DOWNLOADS_DIR}\\go1.17.5.windows-amd64\\go")
-set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
+setup_go("1.17.5")
 
 execute_process(
 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 

@@ -19,8 +19,6 @@ if("${DOMAIN}" STREQUAL "hh\\")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.22.2-windows-x86_64\\bin")
 	
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\node-v16.13.1-win-x64")
-	
 	set(ENV{VSCODE_EXTENSION_PATH} "P:\\Downloads\\vscode-data\\extensions")
 	set(ENV{VSCODE_USER_DATA_PATH} "P:\\Downloads\\vscode-data\\user-data")
 	

@@ -23,12 +23,10 @@ function(setup_go version)
     endif()
 
     
-    set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
-    set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
+    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
+    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
 
     set(ENV{GOPATH} "P:\\Downloads\\gopath")
     set(ENV{GOROOT} "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\go")
     set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
 endfunction()
-
-

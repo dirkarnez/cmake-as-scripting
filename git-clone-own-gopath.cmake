@@ -1,5 +1,6 @@
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/secrets.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/go.cmake)
 
 if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
     message(FATAL_ERROR "GIT_TOKEN not available")
@@ -27,7 +28,8 @@ execute_process(
     WORKING_DIRECTORY $ENV{GOPATH}/src/github.com/dirkarnez)
 	
 execute_process(
-	COMMAND "${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat
+    "${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
 	--extensions-dir "$ENV{VSCODE_EXTENSION_PATH}" 
 	--user-data-dir "$ENV{VSCODE_USER_DATA_PATH}"
 	"."

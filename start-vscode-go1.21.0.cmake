@@ -14,8 +14,6 @@ setup_go("1.21.0")
 
 execute_process(
 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
-	"${DOWNLOADS_DIR}\\VSCode-win32-x64-1.66.1\\Code.exe" 
-	--extensions-dir "$ENV{VSCODE_EXTENSION_PATH}" 
-	--user-data-dir "$ENV{VSCODE_USER_DATA_PATH}"
+	${VSCODE}
 	"."
-	WORKING_DIRECTORY ${DOWNLOADS_DIR})
+	WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads")

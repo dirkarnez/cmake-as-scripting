@@ -1,0 +1,1 @@
+set(VSCODE "$ENV{USERPROFILE}\\Downloads\\VSCode-win32-x64-1.83.1\\Code.exe")

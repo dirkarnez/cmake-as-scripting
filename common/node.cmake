@@ -1,3 +1,8 @@
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
+endif()
+
 set(suffix "_download_link")
 set(18_18_0${suffix} "https://nodejs.org/dist/v18.18.0/node-v18.18.0-win-x64.zip")
 
@@ -18,7 +23,7 @@ function(setup_node version)
         message("node with version ${version} not found, downloading")
         download_file_and_uncompress(${download_url})
     else()
-        message("go with version ${version} found")
+        message("node with version ${version} found")
     endif()
     
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")

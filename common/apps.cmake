@@ -4,25 +4,31 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
 endif()
 
 execute_process(
-	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/get-vscode-latest-version.bat
-	OUTPUT_VARIABLE TEMP
+	COMMAND curl -s https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+	OUTPUT_VARIABLE REDIRECTED_INFORMATION
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
-# string(STRIP ${TEMP} TEMP)
-
-get_filename_component(FILE_NAME_WITHOUT_EXTENSION
-	${TEMP}
-	NAME_WLE)
 	
-if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}")
+get_filename_component(FILE_NAME_WITHOUT_EXTENSION 
+	${REDIRECTED_INFORMATION}
+	NAME_WLE)
+
+	
+if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}/Code.exe")
+	string(REGEX MATCH https://.*.zip REDIRECTED_URL ${REDIRECTED_INFORMATION})
+	message("latest version vscode not found, downloading... ${REDIRECTED_URL}")
+	download_file_and_uncompress("${REDIRECTED_URL}")
+	
 	execute_process(
-		COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/download-vscode-latest-version.bat
-		OUTPUT_VARIABLE TEMP
-		WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads"
+		COMMAND curl -s https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive
+		OUTPUT_VARIABLE REDIRECTED_INFORMATION
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 		OUTPUT_STRIP_TRAILING_WHITESPACE)
 else()
-	message("found vscode")
+	message("latest version vscode found")
 endif()
 
+# portable mode
+file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
 
 set(VSCODE "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\Code.exe")

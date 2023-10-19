@@ -34,12 +34,27 @@ execute_process(
  
 if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod")    
     message(STATUS "Golang project")
+	
+	include(${CMAKE_CURRENT_SOURCE_DIR}/common/go.cmake OPTIONAL RESULT_VARIABLE GO_IS_FOUND)
+	if (GO_IS_FOUND STREQUAL "NOTFOUND")
+		message(FATAL_ERROR "GO_IS_FOUND: ${GO_IS_FOUND}")
+	endif()
+
+	# 1.21.0
+	setup_go("1.17.5")
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json")
     message(STATUS "Node.js project")
+	
+	include(${CMAKE_CURRENT_SOURCE_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)
+	if (NODE_IS_FOUND STREQUAL "NOTFOUND")
+		message(FATAL_ERROR "NODE_IS_FOUND:{${NODE_IS_FOUND}")
+	endif()
+
+	setup_node("18.18.0")
 endif()
 	
 execute_process(
-	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat
-    ${VSCODE}
+	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+	${VSCODE}
 	"."
-	WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
+	WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${REPO_NAME}")

@@ -6,11 +6,6 @@ if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
     # generate one
 endif()
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/apps.cmake OPTIONAL RESULT_VARIABLE APPS_IS_FOUND)
-if (APPS_IS_FOUND STREQUAL "NOTFOUND")
-    message(FATAL_ERROR "APPS_IS_FOUND: ${APPS_IS_FOUND}")
-endif()
-
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "utils.cmake not available")
     message(FATAL_ERROR "???")
@@ -32,7 +27,7 @@ execute_process(
     WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
 
  
-if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod")    
+if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.go")    
     message(STATUS "Golang project")
 	
 	include(${CMAKE_CURRENT_SOURCE_DIR}/common/go.cmake OPTIONAL RESULT_VARIABLE GO_IS_FOUND)
@@ -51,7 +46,15 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json")
 	endif()
 
 	setup_node("18.18.0")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt")
+    message(STATUS "CMake project")
 endif()
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/apps.cmake OPTIONAL RESULT_VARIABLE APPS_IS_FOUND)
+if (APPS_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "APPS_IS_FOUND: ${APPS_IS_FOUND}")
+endif()
+
 	
 execute_process(
 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 

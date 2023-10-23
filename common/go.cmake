@@ -1,3 +1,9 @@
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
+endif()
+
+
 set(suffix "_download_link")
 set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
 set(1_21_0${suffix} "https://go.dev/dl/go1.21.0.windows-amd64.zip")

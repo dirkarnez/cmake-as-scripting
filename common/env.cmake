@@ -13,27 +13,27 @@ message("${CURRENT_USER} ${DOMAIN}")
 if("${DOMAIN}" STREQUAL "hh\\")
 	message("in school")
 
-	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
+	# set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.22.2-windows-x86_64\\bin")
 	
-	set(ENV{VSCODE_EXTENSION_PATH} "P:\\Downloads\\vscode-data\\extensions")
-	set(ENV{VSCODE_USER_DATA_PATH} "P:\\Downloads\\vscode-data\\user-data")
+	# set(ENV{VSCODE_EXTENSION_PATH} "P:\\Downloads\\vscode-data\\extensions")
+	# set(ENV{VSCODE_USER_DATA_PATH} "P:\\Downloads\\vscode-data\\user-data")
 	
-	if(NOT EXISTS $ENV{VSCODE_EXTENSION_PATH})
-		# Create the directory
-		file(MAKE_DIRECTORY $ENV{VSCODE_EXTENSION_PATH})
-	endif()
+	# if(NOT EXISTS $ENV{VSCODE_EXTENSION_PATH})
+	# 	# Create the directory
+	# 	file(MAKE_DIRECTORY $ENV{VSCODE_EXTENSION_PATH})
+	# endif()
 
-	if(NOT EXISTS $ENV{VSCODE_USER_DATA_PATH})
-		# Create the directory
-		file(MAKE_DIRECTORY $ENV{VSCODE_USER_DATA_PATH})
-	endif()
+	# if(NOT EXISTS $ENV{VSCODE_USER_DATA_PATH})
+	# 	# Create the directory
+	# 	file(MAKE_DIRECTORY $ENV{VSCODE_USER_DATA_PATH})
+	# endif()
 
-	message("${DOWNLOADS_DIR}")
+	# message("${DOWNLOADS_DIR}")
 	message("$ENV{PATH}")
-	message("$ENV{VSCODE_EXTENSION_PATH}")
-	message("$ENV{VSCODE_USER_DATA_PATH}")
+	# message("$ENV{VSCODE_EXTENSION_PATH}")
+	# message("$ENV{VSCODE_USER_DATA_PATH}")
 endif()

@@ -24,7 +24,7 @@ execute_process(
     COMMAND git 
     clone
     "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
-    WORKING_DIRECTORY ${DOWNLOADS_DIR})
+    WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
 	
 execute_process(
 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat
@@ -32,4 +32,4 @@ execute_process(
 	--extensions-dir "$ENV{VSCODE_EXTENSION_PATH}" 
 	--user-data-dir "$ENV{VSCODE_USER_DATA_PATH}"
 	"."
-	WORKING_DIRECTORY ${DOWNLOADS_DIR}/${REPO_NAME})
+	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads/${REPO_NAME})

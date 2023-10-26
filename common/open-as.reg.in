@@ -1,13 +1,13 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\Applications\local-school-build.cmd]
+[HKEY_CLASSES_ROOT\Applications\cmake.exe]
 
-[HKEY_CLASSES_ROOT\Applications\local-school-build.cmd\shell]
+[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell]
 
-[HKEY_CLASSES_ROOT\Applications\local-school-build.cmd\shell\open]
+[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell\open]
 
-[HKEY_CLASSES_ROOT\Applications\local-school-build.cmd\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-as-scripting\\local-school-build.cmd\" \"%1\""
+[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell\open\command]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
 
 [HKEY_CLASSES_ROOT\cmake_auto_file]
 
@@ -16,18 +16,18 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\cmake_auto_file\shell\open]
 
 [HKEY_CLASSES_ROOT\cmake_auto_file\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-as-scripting\\local-school-build.cmd\" \"%1\""
+@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
 
 [HKEY_CURRENT_USER\Software\Classes\Applications]
 
-[HKEY_CURRENT_USER\Software\Classes\Applications\local-school-build.cmd]
+[HKEY_CURRENT_USER\Software\Classes\Applications\cmake.exe]
 
-[HKEY_CURRENT_USER\Software\Classes\Applications\local-school-build.cmd\shell]
+[HKEY_CURRENT_USER\Software\Classes\Applications\cmake.exe\shell]
 
-[HKEY_CURRENT_USER\Software\Classes\Applications\local-school-build.cmd\shell\open]
+[HKEY_CURRENT_USER\Software\Classes\Applications\cmake.exe\shell\open]
 
-[HKEY_CURRENT_USER\Software\Classes\Applications\local-school-build.cmd\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-as-scripting\\local-school-build.cmd\" \"%1\""
+[HKEY_CURRENT_USER\Software\Classes\Applications\cmake.exe\shell\open\command]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
 
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file]
 
@@ -36,17 +36,17 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file\shell\open]
 
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-as-scripting\\local-school-build.cmd\" \"%1\""
+@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cmake]
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cmake\OpenWithList]
-"a"="local-school-build.cmd"
+"a"="cmake.exe"
 "MRUList"="a"
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cmake\OpenWithProgids]
 "cmake_auto_file"=hex(0):
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cmake\UserChoice]
-"ProgId"="Applications\\local-school-build.cmd"
+"ProgId"="Applications\\cmake.exe"
 "Hash"="5f7lkMSx6RI="

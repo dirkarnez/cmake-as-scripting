@@ -9,7 +9,8 @@ input(file)
 
 message(${file})
 
-
+# Check tar location, Windows' built-in tar:
+# tar -xf staticserver.zip  -C "123"
 if(${file} MATCHES ".*.tar.gz$")
     # -z gzip
     execute_process(

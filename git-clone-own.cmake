@@ -34,9 +34,8 @@ if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{USER
 	if (GO_IS_FOUND STREQUAL "NOTFOUND")
 		message(FATAL_ERROR "GO_IS_FOUND: ${GO_IS_FOUND}")
 	endif()
-
-	# 1.21.0
-	setup_go("1.17.5")
+	
+	setup_go("1.21.0")
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json")
     message(STATUS "Node.js project")
 	

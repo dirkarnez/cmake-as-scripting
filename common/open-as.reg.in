@@ -31,6 +31,9 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file]
 
+[HKEY_CURRENT_USER\Software\Classes\cmake_auto_file\DefaultIcon]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake-gui.exe\",0"
+
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file\shell]
 
 [HKEY_CURRENT_USER\Software\Classes\cmake_auto_file\shell\open]

@@ -8,8 +8,6 @@ set(suffix "_download_link")
 set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
 set(1_21_0${suffix} "https://go.dev/dl/go1.21.0.windows-amd64.zip")
 
-set(ENV{GOPATH} "P:\\Downloads\\gopath")
-
 function(setup_go version)
     set(download_url "")
 
@@ -35,5 +33,7 @@ function(setup_go version)
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
 
     set(ENV{GOROOT} "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\go")
+    file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\gopath")
+    set(ENV{GOPATH} "$ENV{USERPROFILE}\\Downloads\\gopath")
     set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
 endfunction()

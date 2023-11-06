@@ -10,8 +10,14 @@ string(SUBSTRING ${CURRENT_USER} 0 3 DOMAIN)
 	
 message("${CURRENT_USER} ${DOMAIN}")
 
-if("${DOMAIN}" STREQUAL "hh\\")
-	message("in school")
+if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "stude")
+	if("${DOMAIN}" STREQUAL "hh\\")
+		message("in school")
+	endif()
+
+	if("${CURRENT_USER}" STREQUAL "stude")
+		message("in stemex notebook")
+	endif()
 
 	# set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	

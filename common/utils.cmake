@@ -8,6 +8,15 @@ function(input RETURN_VARIABLE)
     SET(${RETURN_VARIABLE} ${TEMP} PARENT_SCOPE)
 endfunction()
 
+function(pause_and_exit_error)
+	execute_process(
+		COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/readinput.bat
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+		OUTPUT_STRIP_TRAILING_WHITESPACE)
+    # string(STRIP ${TEMP} TEMP)
+	message(FATAL_ERROR)
+endfunction()
+
 function(sleep)
     execute_process(
         COMMAND bash -c "sleep 5s")

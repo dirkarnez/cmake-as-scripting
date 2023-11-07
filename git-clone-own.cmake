@@ -20,11 +20,14 @@ execute_process(
 	COMMAND git config --global credential.helper ""
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 	
-execute_process(
-    COMMAND git 
-    clone
-    "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
-    WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
+	message("Not exists")
+	execute_process(
+		COMMAND git 
+		clone
+		"https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
+		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+endif()
 
  
 if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.go")    

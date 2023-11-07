@@ -10,16 +10,16 @@ string(SUBSTRING ${CURRENT_USER} 0 3 DOMAIN)
 	
 message("${CURRENT_USER} ${DOMAIN}")
 
-if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "stude")
+if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
 	if("${DOMAIN}" STREQUAL "hh\\")
 		message("in school")
 	endif()
 
-	if("${CURRENT_USER}" STREQUAL "stude")
+	if("${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
 		message("in stemex notebook")
 	endif()
 
-	# set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
+	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")

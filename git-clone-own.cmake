@@ -39,7 +39,7 @@ if(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{USER
 	endif()
 	
 	setup_go("1.21.0")
-elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.js" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.js")
     message(STATUS "Node.js project")
 	
 	include(${CMAKE_CURRENT_SOURCE_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)

@@ -44,12 +44,21 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS 
 	
 	include(${CMAKE_CURRENT_SOURCE_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)
 	if (NODE_IS_FOUND STREQUAL "NOTFOUND")
-		message(FATAL_ERROR "NODE_IS_FOUND:{${NODE_IS_FOUND}")
+		message(FATAL_ERROR "NODE_IS_FOUND: ${NODE_IS_FOUND}")
 	endif()
 
 	setup_node("18.18.0")
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt")
     message(STATUS "CMake project")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
+    message(STATUS "Python project")
+	
+	include(${CMAKE_CURRENT_SOURCE_DIR}/common/python.cmake OPTIONAL RESULT_VARIABLE PYTHON_IS_FOUND)
+	if (PYTHON_IS_FOUND STREQUAL "NOTFOUND")
+		message(FATAL_ERROR "PYTHON_IS_FOUND: ${PYTHON_IS_FOUND}")
+	endif()
+
+	setup_python("3.10.8")
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.tex")
     message(STATUS "Tex project")
 	

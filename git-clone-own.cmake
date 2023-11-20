@@ -64,6 +64,8 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.tex")
 	
 	set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\miktex-portable-v5.5.0.1763023\\texmfs\\install\\miktex\\bin\\x64;$ENV{USERPROFILE}\\Downloads\\strawberry-perl-5.38.0.1-64bit-portable\\perl\\bin")
 	# set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\texlive-portable-20231107\\2023\\bin\\windows")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.html")
+    message(STATUS "HTML project")
 endif()
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/apps.cmake OPTIONAL RESULT_VARIABLE APPS_IS_FOUND)

@@ -5,4 +5,4 @@ if (GITHUB_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-new_repo("windows-libraries-wrapper")
+new_repo("win32-printing-helper")

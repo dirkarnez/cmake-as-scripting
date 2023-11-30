@@ -19,6 +19,10 @@ download_file_and_uncompress(
 "https://github.com/dirkarnez/keil-mdk-v5.38a-with-packages-portable/raw/main/Keil_v5.38a_with_packages.zip.012"
 )
 
-
-
 file(RENAME "$ENV{USERPROFILE}\\Downloads\\Keil_v5.38a_with_packages.zip" "$ENV{USERPROFILE}\\Downloads\\Keil_v5.38a_with_packages")
+
+download_file_and_uncompress("https://github.com/dirkarnez/keil-mdk-portable-launcher/releases/download/v1.0.0/keil-mdk-portable-launcher-v1.0.0.zip")
+
+file(RENAME "$ENV{USERPROFILE}\\Downloads\\keil-mdk-portable-launcher-v1.0.0\\UV4.Portable.exe" "$ENV{USERPROFILE}\\Downloads\\Keil_v5.38a_with_packages\\UV4.Portable.exe")
+
+file(REMOVE_RECURSE "$ENV{USERPROFILE}\\Downloads\\keil-mdk-portable-launcher-v1.0.0")

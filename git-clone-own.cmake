@@ -77,6 +77,10 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt")
     message(STATUS "CMake project")
 	
 	set(START_VSCODE TRUE)
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Makefile")
+    message(STATUS "Makefile project")
+	
+	set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
     message(STATUS "Python project")
 	

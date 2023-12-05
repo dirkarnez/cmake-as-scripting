@@ -25,6 +25,7 @@ if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
 	execute_process(
 		COMMAND git 
 		clone
+		--recurse-submodules 
 		"https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
 		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
 endif()

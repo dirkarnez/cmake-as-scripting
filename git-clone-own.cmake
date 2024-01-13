@@ -106,6 +106,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.html")
 	set(START_VSCODE TRUE)
 else()
 	message(STATUS "Unknown")
+	pause_and_exit_error()
 endif()
 
 

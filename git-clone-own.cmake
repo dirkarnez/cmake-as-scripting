@@ -4,7 +4,6 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "utils.cmake not available")
     message("utils.cmake not available")
-	pause_and_exit_error()
 endif()
 
 if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")

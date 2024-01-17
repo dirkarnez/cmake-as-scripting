@@ -12,7 +12,7 @@ input(file)
 
 
 execute_process(
-	COMMAND ffmpeg -i "${url}" -c copy "${file}.mp4"
+ 	COMMAND ffmpeg -i "${url}" -c:v libx264 -c:a aac "${file}.mp4"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
 

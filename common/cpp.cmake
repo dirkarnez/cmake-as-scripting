@@ -1,6 +1,6 @@
 set(suffix "_download_link")
-set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
-set(1_21_0${suffix} "https://go.dev/dl/go1.21.0.windows-amd64.zip")
+# set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
+# set(1_21_0${suffix} "https://go.dev/dl/go1.21.0.windows-amd64.zip")
 
 function(setup_cpp version)
     set(download_url "")
@@ -22,6 +22,8 @@ function(setup_cpp version)
     #    message("go with version ${version} found")
     #endif()
 
+
+	# .\bin\codium.cmd --install-extension="C:\Users\19081126D\Downloads\ms-vscode.cpptools-1.19.2@win32-x64.vsix"
     
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")

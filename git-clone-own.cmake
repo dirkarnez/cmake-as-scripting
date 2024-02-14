@@ -1,7 +1,7 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/secrets.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "utils.cmake not available")
     message("utils.cmake not available")
 endif()
@@ -17,7 +17,7 @@ message(${REPO_NAME})
 
 execute_process(
 	COMMAND git config --global credential.helper ""
-	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+	WORKING_DIRECTORY "$ENV{USERPROFILE}")
 	
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
 	message("Not exists")
@@ -54,7 +54,7 @@ if(IS_KEIL_MDK_PROJECT)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.go")    
     message(STATUS "Golang project")
 	
-	include(${CMAKE_CURRENT_SOURCE_DIR}/common/go.cmake OPTIONAL RESULT_VARIABLE GO_IS_FOUND)
+	include(${CMAKE_CURRENT_LIST_DIR}/common/go.cmake OPTIONAL RESULT_VARIABLE GO_IS_FOUND)
 	if (GO_IS_FOUND STREQUAL "NOTFOUND")
 		message(FATAL_ERROR "GO_IS_FOUND: ${GO_IS_FOUND}")
 	endif()
@@ -65,7 +65,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.js" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.js")
     message(STATUS "Node.js project")
 	
-	include(${CMAKE_CURRENT_SOURCE_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)
+	include(${CMAKE_CURRENT_LIST_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)
 	if (NODE_IS_FOUND STREQUAL "NOTFOUND")
 		message(FATAL_ERROR "NODE_IS_FOUND: ${NODE_IS_FOUND}")
 	endif()
@@ -84,7 +84,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Makefile")
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
     message(STATUS "Python project")
 	
-	include(${CMAKE_CURRENT_SOURCE_DIR}/common/python.cmake OPTIONAL RESULT_VARIABLE PYTHON_IS_FOUND)
+	include(${CMAKE_CURRENT_LIST_DIR}/common/python.cmake OPTIONAL RESULT_VARIABLE PYTHON_IS_FOUND)
 	if (PYTHON_IS_FOUND STREQUAL "NOTFOUND")
 		message(FATAL_ERROR "PYTHON_IS_FOUND: ${PYTHON_IS_FOUND}")
 	endif()
@@ -110,13 +110,13 @@ endif()
 
 
 if (START_VSCODE)
-	include(${CMAKE_CURRENT_SOURCE_DIR}/download-vscodium.cmake OPTIONAL RESULT_VARIABLE VSCODIUM_IS_FOUND)
+	include(${CMAKE_CURRENT_LIST_DIR}/download-vscodium.cmake OPTIONAL RESULT_VARIABLE VSCODIUM_IS_FOUND)
 	if (VSCODIUM_IS_FOUND STREQUAL "NOTFOUND")
 		message(FATAL_ERROR "VSCODIUM_IS_FOUND: ${VSCODIUM_IS_FOUND}")
 	endif()
 		
 	execute_process(
-		COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+		COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec-detached.bat 
 		${VSCODE}
 		"."
 		WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${REPO_NAME}")

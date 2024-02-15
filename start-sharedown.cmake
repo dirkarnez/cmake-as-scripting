@@ -12,7 +12,8 @@ endif()
 
 
 execute_process(
-	COMMAND sharedown.exe
+	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+	sharedown.exe
 	WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads/sharedown-5.3.1-win"
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
 

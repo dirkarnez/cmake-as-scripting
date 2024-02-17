@@ -19,6 +19,6 @@ input(audio)
 message(${audio})
 
 execute_process(
-	COMMAND ffmpeg -i "${video}" -i  "${audio}" -c copy output.mp4
+	COMMAND ffmpeg -i ${video} -i  ${audio} -c copy output.mp4
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)

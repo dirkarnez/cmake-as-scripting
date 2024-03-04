@@ -1,23 +1,5 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\Applications\cmake.exe]
-
-[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell]
-
-[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell\open]
-
-[HKEY_CLASSES_ROOT\Applications\cmake.exe\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
-
-[HKEY_CLASSES_ROOT\cmake_auto_file]
-
-[HKEY_CLASSES_ROOT\cmake_auto_file\shell]
-
-[HKEY_CLASSES_ROOT\cmake_auto_file\shell\open]
-
-[HKEY_CLASSES_ROOT\cmake_auto_file\shell\open\command]
-@="\"@CMAKE_USERPROFILE@\\Downloads\\cmake-3.26.1-windows-x86_64\\bin\\cmake.exe\" \"-P %1\""
-
 [HKEY_CURRENT_USER\Software\Classes\Applications]
 
 [HKEY_CURRENT_USER\Software\Classes\Applications\cmake.exe]

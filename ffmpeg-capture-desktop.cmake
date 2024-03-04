@@ -1,8 +1,13 @@
+# https://trac.ffmpeg.org/wiki/Capture/Desktop
+# https://github.com/hansalemaos/ffmpeg_screenshot_pipe
+
+
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message("???")
     # generate one
 endif()
+
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
 if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
@@ -18,7 +23,12 @@ input(file)
 
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 
+# This command has no audio recorded
 execute_process(
-	COMMAND ffmpeg -i ${file} -vn -c:a aac "${FILE_NAME_WITHOUT_EXTENSION}-converted.m4a"
+	COMMAND ffmpeg -f gdigrab -framerate 30 -i desktop -c:v libx264 "${file}.mp4"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+
+
+

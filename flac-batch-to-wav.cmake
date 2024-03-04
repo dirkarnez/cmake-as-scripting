@@ -14,7 +14,8 @@ message("Directory")
 input(DIRECTORY)
 message(${DIRECTORY})
 
-file(GLOB ALL_OF_MY_FLAC_FILES LIST_DIRECTORIES false ${DIRECTORY}/*.flac)
+file(GLOB ALL_OF_MY_FLAC_FILES LIST_DIRECTORIES false "${DIRECTORY}/*.flac")
+message(${DIRECTORY})
 
 foreach(file ${ALL_OF_MY_FLAC_FILES})
 	message(${file})
@@ -24,7 +25,7 @@ foreach(file ${ALL_OF_MY_FLAC_FILES})
 		"$ENV{USERPROFILE}\\Downloads\\flac-1.4.2-win\\flac-1.4.2-win\\Win64\\flac.exe" 
 		"-d" 
 		"${file}"
-		WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
+		WORKING_DIRECTORY ${DIRECTORY})
 endforeach()
 
 

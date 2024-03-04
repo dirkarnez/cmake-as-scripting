@@ -1,14 +1,14 @@
 string(REPLACE "\\" "\\\\" CMAKE_USERPROFILE "$ENV{USERPROFILE}")
 
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/common/open-as.reg.in" "${CMAKE_CURRENT_SOURCE_DIR}/common/open-as.reg" @ONLY)
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/common/sh-open-as-git-bash.reg.in" "${CMAKE_CURRENT_SOURCE_DIR}/common/sh-open-as-git-bash.reg" @ONLY)
 
 execute_process(
-	COMMAND reg import open-as.reg
+	COMMAND reg import sh-open-as-git-bash.reg
 	OUTPUT_VARIABLE CURRENT_USER
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/common"
 )
 
-file(REMOVE "${CMAKE_CURRENT_SOURCE_DIR}/common/open-as.reg")
+file(REMOVE "${CMAKE_CURRENT_SOURCE_DIR}/common/sh-open-as-git-bash.reg")
 
 execute_process(
 	COMMAND taskkill /f /im explorer.exe

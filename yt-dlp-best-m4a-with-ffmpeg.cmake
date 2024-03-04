@@ -4,23 +4,23 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
-if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/yt-dlp.cmake OPTIONAL RESULT_VARIABLE YT_DLP_IS_FOUND)
+if (YT_DLP_IS_FOUND STREQUAL "NOTFOUND")
 	message("???")
 	# generate one
 endif()
 
-message("url")
-input(url)
-
-message("file name without .mp4 extension")
+message("file")
 input(file)
 
+message(${file})
+
 execute_process(
- 	COMMAND ffmpeg -i "${url}" -c:v libx264 -c:a aac "${file}.mp4"
+	COMMAND yt-dlp -f "bestaudio[ext=m4a]" "${file}"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 
 
-
+	
+	

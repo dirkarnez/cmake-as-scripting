@@ -4,4 +4,5 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://dlm.mariadb.com/3407681/MariaDB/mariadb-11.1.2/winx64-packages/mariadb-11.1.2-winx64.zip")
+# download_file_and_uncompress("https://dlm.mariadb.com/3407681/MariaDB/mariadb-11.1.2/winx64-packages/mariadb-11.1.2-winx64.zip")
+download_file_and_uncompress("https://github.com/dirkarnez/mariadb-portable/releases/download/v11.1.2/mariadb-11.1.2-winx64.zip")

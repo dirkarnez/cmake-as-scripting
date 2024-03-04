@@ -13,12 +13,14 @@ endif()
 message("file")
 input(file)
 
-# file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message(${file})
-
-get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
-
+set(ENV{PATH} "$ENV{USERPROFILE}\\Downloads\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
+# ffmpeg -i mov_bbb.mp4 -c copy -f null - && echo ok
 execute_process(
-	COMMAND ffmpeg -i ${file} -vn -c:a aac "${FILE_NAME_WITHOUT_EXTENSION}-converted.m4a"
+	COMMAND ffmpeg -i "${file}" -c copy -f null -"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
+  RESULT_VARIABLE RESULT
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(NOT RESULT EQUAL 0)
+  message("Possibly a corrupted media file")
+  pause_and_exit_error()
+endif()

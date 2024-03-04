@@ -14,13 +14,11 @@ endif()
 message("file")
 input(file)
 
-# file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message(${file})
-
 execute_process(
 	COMMAND ffmpeg -i "${file}" -af "volumedetect" -vn -sn -dn -f null NUL
-	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
-	OUTPUT_STRIP_TRAILING_WHITESPACE)
+	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
+	
+
 	
 # Windows: ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null NUL 
 # Linux: ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null /dev/null

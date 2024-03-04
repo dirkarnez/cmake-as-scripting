@@ -1,0 +1,38 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\Applications]
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\git-bash.exe]
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\git-bash.exe\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\git-bash.exe\shell\open]
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\git-bash.exe\shell\open\command]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\PortableGit\\git-bash.exe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\sh_auto_file]
+
+[HKEY_CURRENT_USER\Software\Classes\sh_auto_file\DefaultIcon]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\PortableGit\\git-bash.exe\",0"
+
+[HKEY_CURRENT_USER\Software\Classes\sh_auto_file\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\sh_auto_file\shell\open]
+
+[HKEY_CURRENT_USER\Software\Classes\sh_auto_file\shell\open\command]
+@="\"@CMAKE_USERPROFILE@\\Downloads\\PortableGit\\git-bash.exe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.sh]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.sh\OpenWithList]
+"a"="git-bash.exe"
+"MRUList"="a"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.sh\OpenWithProgids]
+"sh_auto_file"=hex(0):
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.sh\UserChoice]
+"ProgId"="Applications\\git-bash.exe"
+"Hash"="2axSy8Hfgcg="
+

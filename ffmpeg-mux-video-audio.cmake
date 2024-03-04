@@ -6,19 +6,19 @@ endif()
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
 if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
-	message("???")
-	# generate one
+    message("???")
+    # generate one
 endif()
 
-message("file")
-input(file)
+message("video")
+input(video)
+message(${video})
 
-# file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message(${file})
-
-get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
+message("audio")
+input(audio)
+message(${audio})
 
 execute_process(
-	COMMAND ffmpeg -i ${file} -vn -c:a aac "${FILE_NAME_WITHOUT_EXTENSION}-converted.m4a"
+	COMMAND ffmpeg -i ${video} -i  ${audio} -c copy output.mp4
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)

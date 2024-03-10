@@ -30,4 +30,5 @@ function(setup_node version)
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
 	
 	set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}")
+	message("$ENV{PATH}")
 endfunction()

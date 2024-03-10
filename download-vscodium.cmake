@@ -12,6 +12,9 @@ execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat
 
 
 string(JSON TAG_NAME GET ${REDIRECTED_INFORMATION} "tag_name")
+
+set(TAG_NAME "1.86.2.24054")
+
 message(STATUS "latest version: ${TAG_NAME}")
 
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/VSCodium-win32-x64-${TAG_NAME}/VSCodium.exe")

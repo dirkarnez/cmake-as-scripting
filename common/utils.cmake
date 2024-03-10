@@ -42,7 +42,8 @@ function(download_file_and_uncompress)
 		
 		message("Downloading ${FILE_NAME_WITH_EXTENSION_TO_SAVE}")
 				
-		execute_process(COMMAND curl ${URL}
+		execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat 
+			curl ${URL}
 			-L 
 			-O
 			-J

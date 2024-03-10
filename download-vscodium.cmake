@@ -5,17 +5,14 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-execute_process(COMMAND C:\\Windows\\System32\\curl.exe 
-	-s
-	-L 
-	-H "Accept: application/vnd.github+json"
-	-H "Authorization: Bearer ${GIT_TOKEN}"
-	-H "X-GitHub-Api-Version: 2022-11-28"
-	"https://api.github.com/repos/VSCodium/vscodium/releases"
-	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
-	OUTPUT_VARIABLE REDIRECTED_INFORMATION)
-	
-string(JSON TAG_NAME GET ${REDIRECTED_INFORMATION} 0 "tag_name")
+execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat
+	curl -s -L "https://api.github.com/repos/VSCodium/vscodium/releases/latest"
+	OUTPUT_VARIABLE REDIRECTED_INFORMATION
+	OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+
+string(JSON TAG_NAME GET ${REDIRECTED_INFORMATION} "tag_name")
+message(STATUS "latest version: ${TAG_NAME}")
 
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/VSCodium-win32-x64-${TAG_NAME}/VSCodium.exe")
 	message("https://github.com/VSCodium/vscodium/releases/download/${TAG_NAME}/VSCodium-win32-x64-${TAG_NAME}.zip")

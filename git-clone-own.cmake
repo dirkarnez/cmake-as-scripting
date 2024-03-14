@@ -1,10 +1,15 @@
-include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
-
 include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
-if (UTILS_IS_FOUND STREQUAL "utils.cmake not available")
+if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message("utils.cmake not available")
 endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake OPTIONAL RESULT_VARIABLE SECRETS_IS_FOUND)
+if (SECRETS_IS_FOUND STREQUAL "NOTFOUND")
+    message("secrets.cmake not available")
+    pause_and_exit_error()
+endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
 
 if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
     message("GIT_TOKEN not available")

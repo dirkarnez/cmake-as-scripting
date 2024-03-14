@@ -9,10 +9,9 @@ function(input RETURN_VARIABLE)
 endfunction()
 
 function(pause_and_exit_error)
-	execute_process(
-		COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/readinput.bat
-		WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
-		OUTPUT_STRIP_TRAILING_WHITESPACE)
+execute_process(
+	COMMAND cmd /k "pause"
+	WORKING_DIRECTORY "$ENV{USERPROFILE}")
     # string(STRIP ${TEMP} TEMP)
 	message(FATAL_ERROR)
 endfunction()

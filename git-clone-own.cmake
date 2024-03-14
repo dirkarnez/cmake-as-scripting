@@ -80,6 +80,12 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS 
 	set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt")
     message(STATUS "CMake project")
+	include(${CMAKE_CURRENT_LIST_DIR}/common/cpp.cmake OPTIONAL RESULT_VARIABLE CPP_IS_FOUND)
+	if (CPP_IS_FOUND STREQUAL "NOTFOUND")
+		message(FATAL_ERROR "CPP_IS_FOUND: ${CPP_IS_FOUND}")
+	endif()
+	
+	setup_cpp()
 	
 	set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Makefile")

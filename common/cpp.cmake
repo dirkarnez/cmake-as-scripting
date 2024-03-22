@@ -38,6 +38,13 @@ function(setup_cpp)
 		endif()
 
 		download_file("https://github.com/microsoft/vscode-cpptools/releases/download/v1.19.6/cpptools-win64.vsix")
+
+        # curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.19.9/vspackage?targetPlatform=win32-x64 -L -O -J > 1234.txt
+
+        # < content-disposition: inline; filename="ms-vscode.cpptools-1.19.9@win32-x64.vsix"; filename*=utf-8''ms-vscode.cpptools-1.19.9%40win32-x64.vsix
+
+        # string(REGEX MATCH "#define[ ]+GLM_VERSION_MAJOR[ ]+([0-9]+)" _ ${GLM_SETUP_FILE})
+        # set(GLM_VERSION_MAJOR "${CMAKE_MATCH_1}")
 		
 		execute_process(
 			COMMAND codium.cmd --install-extension=$ENV{USERPROFILE}\\Downloads\\cpptools-win64.vsix

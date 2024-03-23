@@ -39,7 +39,7 @@ function(setup_cpp)
 
 		download_file("https://github.com/microsoft/vscode-cpptools/releases/download/v1.19.6/cpptools-win64.vsix")
 
-        # curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.19.9/vspackage?targetPlatform=win32-x64 -L -O -J > 1234.txt
+        # curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.19.9/vspackage?targetPlatform=win32-x64 -i
 
         # < content-disposition: inline; filename="ms-vscode.cpptools-1.19.9@win32-x64.vsix"; filename*=utf-8''ms-vscode.cpptools-1.19.9%40win32-x64.vsix
 

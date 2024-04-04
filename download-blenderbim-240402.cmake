@@ -4,4 +4,6 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://mirror.freedif.org/blender/release/Blender4.1/blender-4.1.0-windows-x64.zip")
+download_file("https://github.com/IfcOpenShell/IfcOpenShell/releases/download/blenderbim-240402/blenderbim-240402-py311-win.zip")
+
+

@@ -1,0 +1,6 @@
+[
+    {
+        "key": "${GIT_PROJECT_NAME}",
+        "expected_total_occurance": 3
+    }
+]

@@ -21,7 +21,7 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 
 	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
+	set(ENV{PATH} "${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.22.2-windows-x86_64\\bin")
 	

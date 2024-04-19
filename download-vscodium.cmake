@@ -5,13 +5,13 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat
-	curl -s -L "https://api.github.com/repos/VSCodium/vscodium/releases/latest"
-	OUTPUT_VARIABLE REDIRECTED_INFORMATION
-	OUTPUT_STRIP_TRAILING_WHITESPACE)
+# execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat
+#	curl -s -L "https://api.github.com/repos/VSCodium/vscodium/releases/latest"
+#	OUTPUT_VARIABLE REDIRECTED_INFORMATION
+#	OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 
-string(JSON TAG_NAME GET ${REDIRECTED_INFORMATION} "tag_name")
+# string(JSON TAG_NAME GET ${REDIRECTED_INFORMATION} "tag_name")
 
 set(TAG_NAME "1.86.2.24054")
 

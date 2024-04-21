@@ -78,7 +78,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS 
 	setup_node("18.18.0")
 	
 	set(START_VSCODE TRUE)
-elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/src/main.cpp")
     message(STATUS "CMake project")
 	include(${CMAKE_CURRENT_LIST_DIR}/common/cpp.cmake OPTIONAL RESULT_VARIABLE CPP_IS_FOUND)
 	if (CPP_IS_FOUND STREQUAL "NOTFOUND")

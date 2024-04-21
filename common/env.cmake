@@ -21,9 +21,10 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 
 	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.22.2-windows-x86_64\\bin")
+	set(ENV{PATH} "${DOWNLOADS_DIR}")
+	set(ENV{PATH} "${DOWNLOADS_DIR}\\PortableGit\\bin")
+	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.26.1-windows-x86_64\\bin")
+	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\curl-8.6.0_4-win64-mingw\\curl-8.6.0_4-win64-mingw\\bin")
 	
 	# set(ENV{VSCODE_EXTENSION_PATH} "P:\\Downloads\\vscode-data\\extensions")
 	# set(ENV{VSCODE_USER_DATA_PATH} "P:\\Downloads\\vscode-data\\user-data")

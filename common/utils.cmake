@@ -76,6 +76,7 @@ function(download_file_and_uncompress)
 		x
 		${FILE_NAME_WITH_EXTENSION_TO_SAVE}
 		-o${FILE_NAME_WITHOUT_EXTENSION}
+		-y
 		WORKING_DIRECTORY $ENV{USERPROFILE}\\Downloads)
 	
 	# file(ARCHIVE_EXTRACT 

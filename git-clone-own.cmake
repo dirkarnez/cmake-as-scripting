@@ -104,8 +104,8 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
 	
 	set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.tex")
-    message(STATUS "Tex project")
-	
+	message(STATUS "Tex project")
+	# common/tex.cmake
 	set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\miktex-portable-v5.5.0.1763023\\texmfs\\install\\miktex\\bin\\x64;$ENV{USERPROFILE}\\Downloads\\strawberry-perl-5.38.0.1-64bit-portable\\perl\\bin")
 	# set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\texlive-portable-20231107\\2023\\bin\\windows")
 	

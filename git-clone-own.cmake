@@ -118,6 +118,15 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.html")
     message(STATUS "HTML project")
 	
 	set(START_VSCODE TRUE)
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main/main.ino" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.ino")
+	message(STATUS "Arduino IDE project")
+
+	include(${CMAKE_CURRENT_LIST_DIR}/common/arduino-ide.cmake OPTIONAL RESULT_VARIABLE ARDUINO_IDE_IS_FOUND)
+	if (ARDUINO_IDE_IS_FOUND STREQUAL "NOTFOUND")
+		message(FATAL_ERROR "ARDUINO_IDE_IS_FOUND: ${ARDUINO_IDE_IS_FOUND}")
+	endif()
+
+	setup_arduino_ide("legacy")
 else()
 	message(STATUS "Unknown")
 	# pause_and_exit_error()

@@ -163,3 +163,16 @@ function(download_file URL)
         message("NOT SUCCESS")
     endif()
 endfunction()
+
+function(find_exe EXECUTABLE_NAME)
+    find_program(EXECUTABLE_FULL_PATH NAMES "${EXECUTABLE_NAME}" "${EXECUTABLE_NAME}.exe"
+        PATHS $ENV{PATH}
+    )
+
+    if(EXECUTABLE_FULL_PATH)
+      message(STATUS "${EXECUTABLE_NAME} found: ${EXECUTABLE_FULL_PATH}")
+    else()
+      message(WARNING "${EXECUTABLE_NAME} not found. Some functionality may be limited.")
+      pause_and_exit_error()
+    endif()
+endfunction()

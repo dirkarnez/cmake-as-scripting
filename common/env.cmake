@@ -45,9 +45,10 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 	# message("$ENV{VSCODE_USER_DATA_PATH}")
 elseif("${CURRENT_USER}" STREQUAL "administrator\\administrator")
 	message("My notebook")
-
+	
 	set(ENV{PATH} "${DOWNLOADS_DIR}")
-	set(ENV{PATH} "D:\\Softwares\\PortableGit\\bin")
+	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\bin")
+	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\usr\\bin")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\curl-8.7.1_9-win64-mingw\\bin")
 endif()

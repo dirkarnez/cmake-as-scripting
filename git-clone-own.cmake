@@ -14,7 +14,11 @@ include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
 if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
     message("GIT_TOKEN not available")
 	pause_and_exit_error()
+else()
+	message("GIT_TOKEN ${GIT_TOKEN}")
 endif()
+
+find_exe("git")
 
 message("Existing repository **name**:")
 input(REPO_NAME)
@@ -116,7 +120,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.html")
 	set(START_VSCODE TRUE)
 else()
 	message(STATUS "Unknown")
-	pause_and_exit_error()
+	# pause_and_exit_error()
 endif()
 
 

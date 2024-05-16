@@ -1,1 +1,2 @@
 common/secrets.cmake
+/common/*.reg

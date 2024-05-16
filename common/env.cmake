@@ -1,5 +1,5 @@
 execute_process(
-	COMMAND whoami
+	COMMAND C:\\Windows\\System32\\whoami.exe
 	OUTPUT_VARIABLE CURRENT_USER
 	WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
@@ -10,6 +10,8 @@ string(SUBSTRING ${CURRENT_USER} 0 3 DOMAIN)
 	
 message("${CURRENT_USER} ${DOMAIN}")
 
+set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
+
 if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
 	if("${DOMAIN}" STREQUAL "hh\\")
 		message("in school")
@@ -18,8 +20,6 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 	if("${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
 		message("in stemex notebook")
 	endif()
-
-	set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 	
 	set(ENV{PATH} "${DOWNLOADS_DIR}")
 	set(ENV{PATH} "${DOWNLOADS_DIR}\\PortableGit\\bin")
@@ -43,4 +43,11 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 	message("$ENV{PATH}")
 	# message("$ENV{VSCODE_EXTENSION_PATH}")
 	# message("$ENV{VSCODE_USER_DATA_PATH}")
+elseif("${CURRENT_USER}" STREQUAL "administrator\\administrator")
+	message("My notebook")
+
+	set(ENV{PATH} "${DOWNLOADS_DIR}")
+	set(ENV{PATH} "D:\\Softwares\\PortableGit\\bin")
+	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin")
+	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\curl-8.7.1_9-win64-mingw\\bin")
 endif()

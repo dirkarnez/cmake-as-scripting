@@ -36,6 +36,8 @@ if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
 		--recurse-submodules 
 		"https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
 		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+else()
+	message(WARNING "$ENV{USERPROFILE}/Downloads/${REPO_NAME} exists")
 endif()
 
 set(START_VSCODE FALSE)

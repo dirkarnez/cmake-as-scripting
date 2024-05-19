@@ -15,7 +15,15 @@ message("Directory")
 input(DIRECTORY)
 
 execute_process(
-	COMMAND git config --global credential.helper ""
+	COMMAND git config user.name "dirkarnez"
+	WORKING_DIRECTORY ${DIRECTORY})
+	
+execute_process(
+	COMMAND git config user.email "smalldirkalex@gmail.com"
+	WORKING_DIRECTORY ${DIRECTORY})
+	
+execute_process(
+	COMMAND git config credential.helper ""
 	WORKING_DIRECTORY ${DIRECTORY})
 	
 execute_process(

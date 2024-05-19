@@ -14,6 +14,12 @@ endif()
 message("Directory")
 input(DIRECTORY)
 
+if(${DIRECTORY} STREQUAL "\.")
+	set(DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+endif()
+
+message("${DIRECTORY}")
+
 execute_process(
 	COMMAND git config user.name "dirkarnez"
 	WORKING_DIRECTORY ${DIRECTORY})

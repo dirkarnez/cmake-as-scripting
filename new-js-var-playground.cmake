@@ -5,4 +5,4 @@ if (GITHUB_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-new_repo("tag-web-playground")
+new_repo("image-js-playground")

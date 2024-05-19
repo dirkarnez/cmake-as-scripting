@@ -14,7 +14,7 @@ endif()
 message("Directory")
 input(DIRECTORY)
 
-if(${DIRECTORY} STREQUAL "\.")
+if(${DIRECTORY} STREQUAL ".")
 	set(DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
 endif()
 

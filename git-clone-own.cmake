@@ -106,7 +106,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Makefile")
     message(STATUS "Makefile project")
 	
 	set(START_VSCODE TRUE)
-elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.py")
     message(STATUS "Python project")
 	
 	include(${CMAKE_CURRENT_LIST_DIR}/common/python.cmake OPTIONAL RESULT_VARIABLE PYTHON_IS_FOUND)

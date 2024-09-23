@@ -29,13 +29,21 @@ execute_process(
 	WORKING_DIRECTORY "$ENV{USERPROFILE}")
 	
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
-	message("Not exists")
+	message("Not exists, cloning...")
 	execute_process(
 		COMMAND git 
 		clone
 		--recurse-submodules 
 		"https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
+		RESULT_VARIABLE IS_OK
 		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+	if(NOT "${IS_OK}" STREQUAL "0")
+		execute_process(
+			COMMAND "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" 
+			"-command"
+			"Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.MessageBox]::Show($THIS, 'Cannot clone! Typos or invalid GitHub token','Error','OK','warning')"
+			WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+	endif()
 else()
 	message(WARNING "$ENV{USERPROFILE}/Downloads/${REPO_NAME} exists")
 endif()
@@ -98,7 +106,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Makefile")
     message(STATUS "Makefile project")
 	
 	set(START_VSCODE TRUE)
-elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.py")
     message(STATUS "Python project")
 	
 	include(${CMAKE_CURRENT_LIST_DIR}/common/python.cmake OPTIONAL RESULT_VARIABLE PYTHON_IS_FOUND)

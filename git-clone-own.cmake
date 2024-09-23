@@ -137,6 +137,10 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main/main.ino" OR EXISTS
 	endif()
 
 	setup_arduino_ide("legacy")
+elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/Dockerfile")
+    message(STATUS "Docker project")
+	
+	set(START_VSCODE TRUE)
 else()
 	message(STATUS "Unknown")
 	# pause_and_exit_error()

@@ -12,6 +12,8 @@ message("${CURRENT_USER} ${DOMAIN}")
 
 set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 
+set(ENV{PATH} "$ENV{PATH};C:\\Windows\\System32")
+
 if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
 	if("${DOMAIN}" STREQUAL "hh\\")
 		message("in school")
@@ -21,8 +23,8 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 		message("in stemex notebook")
 	endif()
 	
-	set(ENV{PATH} "${DOWNLOADS_DIR}")
-	set(ENV{PATH} "${DOWNLOADS_DIR}\\PortableGit\\bin")
+	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
+	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\cmake-3.26.1-windows-x86_64\\bin")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\curl-8.6.0_4-win64-mingw\\curl-8.6.0_4-win64-mingw\\bin")
 	
@@ -46,7 +48,7 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 elseif("${CURRENT_USER}" STREQUAL "administrator\\administrator")
 	message("My notebook")
 	
-	set(ENV{PATH} "${DOWNLOADS_DIR}")
+	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\bin")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\usr\\bin")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin")

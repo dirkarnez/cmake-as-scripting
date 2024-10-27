@@ -1,6 +1,8 @@
-include(${CMAKE_CURRENT_LIST_DIR}/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
-    message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
+    message("???")
+    # generate one
 endif()
 
 execute_process(

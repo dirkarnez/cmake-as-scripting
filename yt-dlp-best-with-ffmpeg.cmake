@@ -14,13 +14,9 @@ message("file")
 input(file)
 
 message(${file})
-
+	
+# https://github.com/yt-dlp/yt-dlp/releases/download/2024.11.04/yt-dlp_win.zip
 execute_process(
 	COMMAND yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" "${file}"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-
-
-	
-	

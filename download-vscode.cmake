@@ -19,6 +19,10 @@ if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}/Code.e
 	string(REGEX MATCH https://.*.zip REDIRECTED_URL ${REDIRECTED_INFORMATION})
 	message("latest version vscode not found, downloading... ${REDIRECTED_URL}")
 	download_file_and_uncompress("${REDIRECTED_URL}")
+	if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}/data")
+		# portable mode
+		file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
+	endif()
 else()
 	message("latest version vscode found")
 endif()

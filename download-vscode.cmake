@@ -15,19 +15,19 @@ get_filename_component(FILE_NAME_WITHOUT_EXTENSION
 	${REDIRECTED_INFORMATION}
 	NAME_WLE)
 	
-if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}/Code.exe")
+if(NOT EXISTS "$ENV{SOFTWARE_DIR}/${FILE_NAME_WITHOUT_EXTENSION}/Code.exe")
 	string(REGEX MATCH https://.*.zip REDIRECTED_URL ${REDIRECTED_INFORMATION})
 	message("latest version vscode not found, downloading... ${REDIRECTED_URL}")
 	download_file_and_uncompress("${REDIRECTED_URL}")
-	if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION}/data")
+	if(NOT EXISTS "$ENV{SOFTWARE_DIR}/${FILE_NAME_WITHOUT_EXTENSION}/data")
 		# portable mode
-		file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
+		file(MAKE_DIRECTORY "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
 	endif()
 else()
 	message("latest version vscode found")
 endif()
 
 # portable mode
-file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
+file(MAKE_DIRECTORY "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
 
-set(VSCODE "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION}\\Code.exe")
+set(VSCODE "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\Code.exe")

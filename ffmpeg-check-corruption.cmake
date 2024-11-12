@@ -16,7 +16,7 @@ input(file)
 set(ENV{PATH} "$ENV{USERPROFILE}\\Downloads\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
 # ffmpeg -i mov_bbb.mp4 -c copy -f null - && echo ok
 execute_process(
-	COMMAND ffmpeg -i "${file}" -c copy -f null -"
+	COMMAND ffmpeg -i "${file}" -c copy -f null -
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
   RESULT_VARIABLE RESULT
 	OUTPUT_STRIP_TRAILING_WHITESPACE)

@@ -23,33 +23,33 @@ function(setup_cpp)
     #endif()
 
 
-	# .
-	include(${CMAKE_CURRENT_SOURCE_DIR}/download-vscodium.cmake OPTIONAL RESULT_VARIABLE VSCODIUM_IS_FOUND)
-	if (VSCODIUM_IS_FOUND STREQUAL "NOTFOUND")
-		message("???")
-		# generate one
-	endif()
-	
-	if(EXISTS "$ENV{USERPROFILE}/Downloads/VSCodium-win32-x64-${TAG_NAME}/VSCodium.exe")
-		include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
-		if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
-			message("???")
-			# generate one
-		endif()
-
-		download_file("https://github.com/microsoft/vscode-cpptools/releases/download/v1.19.6/cpptools-win64.vsix")
-
-        # curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.19.9/vspackage?targetPlatform=win32-x64 -i
-
-        # < content-disposition: inline; filename="ms-vscode.cpptools-1.19.9@win32-x64.vsix"; filename*=utf-8''ms-vscode.cpptools-1.19.9%40win32-x64.vsix
-
-        # string(REGEX MATCH "#define[ ]+GLM_VERSION_MAJOR[ ]+([0-9]+)" _ ${GLM_SETUP_FILE})
-        # set(GLM_VERSION_MAJOR "${CMAKE_MATCH_1}")
-		
-		execute_process(
-			COMMAND codium.cmd --install-extension=$ENV{USERPROFILE}\\Downloads\\cpptools-win64.vsix
-			WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\VSCodium-win32-x64-${TAG_NAME}\\bin")
-	endif()
+# .
+# 	include(${CMAKE_CURRENT_SOURCE_DIR}/download-vscodium.cmake OPTIONAL RESULT_VARIABLE VSCODIUM_IS_FOUND)
+# 	if (VSCODIUM_IS_FOUND STREQUAL "NOTFOUND")
+# 		message("???")
+# 		# generate one
+# 	endif()
+# 	
+# 	if(EXISTS "$ENV{USERPROFILE}/Downloads/VSCodium-win32-x64-${TAG_NAME}/VSCodium.exe")
+# 		include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+# 		if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+# 			message("???")
+# 			# generate one
+# 		endif()
+# 
+# 		download_file("https://github.com/microsoft/vscode-cpptools/releases/download/v1.19.6/cpptools-win64.vsix")
+# 
+#         # curl https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-vscode/vsextensions/cpptools/1.19.9/vspackage?targetPlatform=win32-x64 -i
+# 
+#         # < content-disposition: inline; filename="ms-vscode.cpptools-1.19.9@win32-x64.vsix"; filename*=utf-8''ms-vscode.cpptools-1.19.9%40win32-x64.vsix
+# 
+#         # string(REGEX MATCH "#define[ ]+GLM_VERSION_MAJOR[ ]+([0-9]+)" _ ${GLM_SETUP_FILE})
+#         # set(GLM_VERSION_MAJOR "${CMAKE_MATCH_1}")
+# 		
+# 		execute_process(
+# 			COMMAND codium.cmd --install-extension=$ENV{USERPROFILE}\\Downloads\\cpptools-win64.vsix
+# 			WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\VSCodium-win32-x64-${TAG_NAME}\\bin")
+# 	endif()
     
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
     set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")

@@ -23,7 +23,7 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 		message("in stemex notebook")
 	endif()
 
- 	set(ENV{SOFTWARE_DIR} "D:\\Softwares")
+	set(ENV{SOFTWARE_DIR} "${DOWNLOADS_DIR}")
   
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}\\PortableGit\\bin")
@@ -49,8 +49,8 @@ if("${DOMAIN}" STREQUAL "hh\\" OR "${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\s
 	# message("$ENV{VSCODE_USER_DATA_PATH}")
 elseif("${CURRENT_USER}" STREQUAL "administrator\\administrator")
 	message("My notebook")
-
-  	set(ENV{SOFTWARE_DIR} "${DOWNLOADS_DIR}")
+ 
+	set(ENV{SOFTWARE_DIR} "D:\\Softwares")
 	
 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\bin")

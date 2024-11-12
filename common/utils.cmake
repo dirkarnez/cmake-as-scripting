@@ -36,6 +36,11 @@ function(get_filename_from_url_without_extension URL RETURN_VARIABLE)
 endfunction()
 
 function(download_file_and_uncompress)
+    include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+    if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+        message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+    endif()
+
 	foreach(URL ${ARGV})
 		get_filename_from_url(${URL} FILE_NAME_WITH_EXTENSION_TO_SAVE)
 		
@@ -71,13 +76,10 @@ function(download_file_and_uncompress)
 	get_filename_component(FILE_NAME_WITHOUT_EXTENSION
 			${FIRST_URL}
 			NAME_WLE)
-			
+
 	execute_process(COMMAND C:\\PROGRA~1\\7-Zip\\7z.exe 
-		x
-		${FILE_NAME_WITH_EXTENSION_TO_SAVE}
-		-o${FILE_NAME_WITHOUT_EXTENSION}
-		-y
-		WORKING_DIRECTORY $ENV{USERPROFILE}\\Downloads)
+		x "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITH_EXTENSION_TO_SAVE}" -o${FILE_NAME_WITHOUT_EXTENSION} -y
+		WORKING_DIRECTORY $ENV{SOFTWARE_DIR})
 	
 	# file(ARCHIVE_EXTRACT 
 	#	INPUT $ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITH_EXTENSION_TO_SAVE}

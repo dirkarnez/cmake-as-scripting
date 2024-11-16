@@ -36,7 +36,7 @@ function(get_filename_from_url_without_extension URL RETURN_VARIABLE)
 endfunction()
 
 function(download_file_and_uncompress)
-    include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+    include(${CMAKE_CURRENT_LIST_DIR}/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
     if (ENV_IS_FOUND STREQUAL "NOTFOUND")
         message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
     endif()

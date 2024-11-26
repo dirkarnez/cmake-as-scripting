@@ -19,7 +19,7 @@ download_file_and_uncompress(
 "https://github.com/dirkarnez/STM32CubeIDE-portable/releases/download/v1.6.1/STM32CubeIDE-portable-v1.6.1.zip.012"
 )
 
-# file(RENAME "$ENV{USERPROFILE}\\Downloads\\Keil_v5.38a_with_packages.zip" "$ENV{USERPROFILE}\\Downloads\\Keil_v5.38a_with_packages")
+file(RENAME "$ENV{USERPROFILE}\\Downloads\\STM32CubeIDE-portable-v1.6.1.zip" "$ENV{USERPROFILE}\\Downloads\\STM32CubeIDE-portable-v1.6.1")
 
 # download_file_and_uncompress("https://github.com/dirkarnez/keil-mdk-portable-launcher/releases/download/v1.0.0/keil-mdk-portable-launcher-v1.0.0.zip")
 

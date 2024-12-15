@@ -4,11 +4,11 @@ if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
 	# generate one
 endif()
 
-if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/yt-dlp_win/yt-dlp.exe")
+if(NOT EXISTS "$ENV{SOFTWARE_DIR}/yt-dlp_win/yt-dlp.exe")
 	message("downloading yt-dlp")
-	download_file_and_uncompress("https://github.com/yt-dlp/yt-dlp/releases/download/2023.07.06/yt-dlp_win.zip")
+	download_file_and_uncompress("https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.06/yt-dlp_win.zip")
 else()
 	message("found yt-dlp")
 endif()
 
-set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\yt-dlp_win")
+set(ENV{PATH} "$ENV{PATH};$ENV{SOFTWARE_DIR}\\yt-dlp_win")

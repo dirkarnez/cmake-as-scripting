@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("sbcl-portable-v2.1.11.zip")
+download_file_and_uncompress("https://github.com/dirkarnez/sbcl-portable/releases/download/v2.1.11/sbcl-portable-v2.1.11.zip")

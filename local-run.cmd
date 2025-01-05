@@ -25,7 +25,7 @@ echo User is not an administrator
 set PATH=^
 %DOWNLOADS_DIR%\PortableGit\bin;^
 %DOWNLOADS_DIR%\PortableGit\usr\bin;^
-%DOWNLOADS_DIR%\cmake-3.26.1-windows-x86_64\bin;^
+%DOWNLOADS_DIR%\cmake-3.29.3-windows-x86_64\bin;^
 %DOWNLOADS_DIR%\curl-8.6.0_4-win64-mingw\curl-8.6.0_4-win64-mingw\bin;
 
 )

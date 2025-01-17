@@ -23,6 +23,7 @@ input(file)
 
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 
+# ffmpeg -f gdigrab -framerate 30 -i desktop -c:v libx264 output.mkv -f dshow -i audio="Stereo Mix (Realtek Audio)" output.mkv
 # This command has no audio recorded
 execute_process(
 	COMMAND ffmpeg -f gdigrab -framerate 30 -i desktop -c:v libx264 "${file}.mp4"

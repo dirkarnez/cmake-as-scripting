@@ -108,7 +108,15 @@ function(download_file_and_run URL)
     #     INACTIVITY_TIMEOUT 5
     #     STATUS DOWNLOAD_STATUS_TUPLE)
 
-    execute_process(COMMAND curl ${URL}
+    # get_filename_from_url(${URL} FILE_NAME_WITH_EXTENSION_TO_SAVE)
+
+    include("${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake" OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+    if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+        message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+    endif()
+
+    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec.bat 
+        curl ${URL}
         -L 
         -O
         -J

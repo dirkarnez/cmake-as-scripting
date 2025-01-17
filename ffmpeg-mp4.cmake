@@ -18,7 +18,7 @@ input(file)
 
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 
-set(ENV{PATH} "$ENV{USERPROFILE}\\Downloads\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
+set(ENV{PATH} "$ENV{SOFTWARE_DIR}\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
 
 execute_process(
 	COMMAND ffmpeg -i "${file}" "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp4"

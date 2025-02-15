@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.3.2.5/android-studio-2024.3.2.5-windows.zip")
+download_file_and_uncompress("https://github.com/dirkarnez/autodesk-eagle-free-portable/releases/download/v9.6.2/autodesk-eagle-free-portable-v9.6.2.zip")

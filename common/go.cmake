@@ -3,6 +3,11 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
 endif()
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+endif()
+
 
 set(suffix "_download_link")
 set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
@@ -21,7 +26,7 @@ function(setup_go version)
 
     get_filename_from_url_without_extension(${download_url} FILE_NAME_WITHOUT_EXTENSION_FROM_URL)
 
-    if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/go/bin/go.exe")
+    if(NOT EXISTS "$ENV{SOFTWARE_DIR}/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/go/bin/go.exe")
         message("go with version ${version} not found, downloading")
         download_file_and_uncompress(${download_url})
     else()
@@ -29,12 +34,12 @@ function(setup_go version)
     endif()
 
     
-    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
-    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
+#    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
+#    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
 
-    set(ENV{GOROOT} "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\go")
-    file(MAKE_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\gopath")
-    set(ENV{GOPATH} "$ENV{USERPROFILE}\\Downloads\\gopath")
+    set(ENV{GOROOT} "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\go")
+    file(MAKE_DIRECTORY "$ENV{SOFTWARE_DIR}\\gopath")
+    set(ENV{GOPATH} "$ENV{SOFTWARE_DIR}\\gopath")
     set(ENV{PATH} "$ENV{PATH};$ENV{GOROOT}\\bin")
     message("$ENV{PATH}")
 endfunction()

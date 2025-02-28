@@ -3,6 +3,11 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
 endif()
 
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+endif()
+
 set(suffix "_download_link")
 set(18_18_0${suffix} "https://nodejs.org/dist/v18.18.0/node-v18.18.0-win-x64.zip")
 
@@ -19,7 +24,7 @@ function(setup_node version)
 
     get_filename_from_url_without_extension(${download_url} FILE_NAME_WITHOUT_EXTENSION_FROM_URL)
 
-    if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/node.exe")
+    if(NOT EXISTS "$ENV{SOFTWARE_DIR}/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}/node.exe")
         message("node with version ${version} not found, downloading")
         download_file_and_uncompress(${download_url})
     else()

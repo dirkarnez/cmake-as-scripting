@@ -29,5 +29,9 @@ endif()
 
 # portable mode
 file(MAKE_DIRECTORY "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
+# data\user-data\User\settings.json
+# {
+#    "git.path": "D:\\Softwares\\PortableGit\\bin\\git.exe"
+# }
 
 set(VSCODE "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\Code.exe")

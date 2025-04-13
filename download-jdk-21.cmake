@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://github.com/dirkarnez/laragon-portable/releases/download/v6.0.0/laragon-php-8.4.0-mariadb-10.11.10-portable-v6.0.0.zip")
+download_file_and_uncompress("https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_windows_hotspot_21.0.6_7.zip")

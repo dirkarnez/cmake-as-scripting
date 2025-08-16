@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # <-- clone with complete history
-
+          
     # Powershell:  [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("dirkarnez:MY_PAT"))
       - continue-on-error: true
         run: |

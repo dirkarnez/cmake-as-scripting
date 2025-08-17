@@ -30,6 +30,24 @@ execute_process(
 	
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
 	message("Not exists, cloning...")
+	
+	execute_process(
+		COMMAND git 
+		config
+		--global
+		core.longpaths
+		true
+		RESULT_VARIABLE IS_OK
+		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+		
+	if(NOT "${IS_OK}" STREQUAL "0")
+		execute_process(
+		COMMAND "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" 
+		"-command"
+		"Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.MessageBox]::Show($THIS, 'Cannot config git.exe','Error','OK','warning')"
+		WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
+	endif()
+	
 	execute_process(
 		COMMAND git 
 		clone

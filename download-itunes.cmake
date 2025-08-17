@@ -4,5 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://github.com/dirkarnez/sharedown-portable/releases/download/v5.3.6/sharedown-v5.3.6-portable.zip")
-
+download_file_and_uncompress("https://github.com/dirkarnez/itunes-portable/releases/download/v12.13.7.1/itunes-portable-v12.13.7.1.zip")

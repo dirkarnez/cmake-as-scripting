@@ -19,6 +19,6 @@ input(file)
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 
 execute_process(
-	COMMAND ffmpeg -i ${file} -vn -c:a libmp3lame "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp3"
+	COMMAND ffmpeg -i ${file} -vn -b:a 320k -c:a libmp3lame "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp3"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)

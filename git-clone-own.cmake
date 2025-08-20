@@ -96,7 +96,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{
 		message(FATAL_ERROR "GO_IS_FOUND: ${GO_IS_FOUND}")
 	endif()
 	
-	setup_go("1.21.0")
+	setup_go("1.25.0")
 	
 	set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.js" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.js")

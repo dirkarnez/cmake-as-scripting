@@ -12,15 +12,15 @@ endif()
 
 message("file")
 input(file)
-message(${file})
+message("${file}")
 
 message("start 00:04:56.00")
 input(start)
-message(${start})
+message("${start}")
 
 message("end 00:04:56.00")
 input(end)
-message(${end})
+message("${end}")
 
 # --embed-metadata --embed-thumbnail
 # --downloader-args "ffmpeg_i:-ss ${start} -to ${end}"

@@ -12,8 +12,7 @@ endif()
 
 message("file")
 input(file)
-
-message(${file})
+message("${file}")
 
 execute_process(
 	COMMAND yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" "${file}" --downloader-args "ffmpeg_i:-ss 1:36 -to 1:40"

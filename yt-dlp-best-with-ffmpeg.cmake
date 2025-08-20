@@ -12,8 +12,7 @@ endif()
 
 message("file")
 input(file)
-
-message(${file})
+message("${file}")
 	
 # https://github.com/yt-dlp/yt-dlp/releases/download/2024.11.04/yt-dlp_win.zip
 execute_process(

@@ -6,7 +6,7 @@ endif()
 
 message("Directory")
 input(DIRECTORY)
-message(${DIRECTORY})
+message("${DIRECTORY}")
 
 execute_process(
     COMMAND cmd

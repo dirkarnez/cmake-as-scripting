@@ -12,8 +12,7 @@ endif()
 
 message("file")
 input(file)
-
-message(${file})
+message("${file}")
 
 execute_process(
 	COMMAND yt-dlp -f "bestaudio[ext=m4a]" "${file}"

@@ -12,7 +12,7 @@ endif()
 
 message("file")
 input(file)
-message(${file})
+message("${file}")
 
 # --embed-metadata --embed-thumbnail
 # --downloader-args "ffmpeg_i:-ss ${start} -to ${end}"

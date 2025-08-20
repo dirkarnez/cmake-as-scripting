@@ -14,7 +14,7 @@ function(new_repo from_template)
 
     message("New repository name:")
     input(NEW_REPO_NAME)
-    message(${NEW_REPO_NAME})
+    message("${NEW_REPO_NAME}")
     execute_process(COMMAND curl 
         "-L" 
         "-X" "POST"

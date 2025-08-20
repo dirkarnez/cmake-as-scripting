@@ -19,7 +19,7 @@ message("file")
 input(file)
 
 # file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message(${file})
+# message("${file}")
 
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 

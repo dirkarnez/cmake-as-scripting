@@ -12,13 +12,13 @@ endif()
 
 message("Directory")
 input(DIRECTORY)
-message(${DIRECTORY})
+message("${DIRECTORY}")
 
 file(GLOB ALL_OF_MY_FILES LIST_DIRECTORIES false "${DIRECTORY}/*")
-message(${DIRECTORY})
+message("${DIRECTORY}")
 
 foreach(file ${ALL_OF_MY_FILES})
-	message(${file})
+	message("${file}")
 	
 	# execute_process(
 	# 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 

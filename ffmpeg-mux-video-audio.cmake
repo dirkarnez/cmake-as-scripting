@@ -12,11 +12,11 @@ endif()
 
 message("video")
 input(video)
-message(${video})
+message("${video}")
 
 message("audio")
 input(audio)
-message(${audio})
+message("${audio}")
 
 execute_process(
 	COMMAND ffmpeg -i ${video} -i  ${audio} -c copy output.mp4

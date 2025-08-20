@@ -19,7 +19,7 @@ execute_process(
 	WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads")
 
 file(TO_CMAKE_PATH "$ENV{USERPROFILE}\\Downloads\\cmake-as-scripting" DIRECTORY_NORMALIZED)
-message(${DIRECTORY_NORMALIZED})
+message("${DIRECTORY_NORMALIZED}")
 
 file(GLOB ALL_OF_MY_FILES LIST_DIRECTORIES false "${CMAKE_CURRENT_LIST_DIR}/temp/*.download_completed")
 list(LENGTH ALL_OF_MY_FILES NUM_FILES)

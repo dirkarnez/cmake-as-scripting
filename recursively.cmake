@@ -8,10 +8,10 @@ message("Directory")
 input(DIRECTORY)
 
 file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-message(${DIRECTORY_NORMALIZED})
+message("${DIRECTORY_NORMALIZED}")
 
 file(GLOB_RECURSE ALL_OF_MY_FILES LIST_DIRECTORIES false ${DIRECTORY_NORMALIZED}/*)
 
 foreach(x ${ALL_OF_MY_FILES})
-	message(${x})
+	message("${x}")
 endforeach()

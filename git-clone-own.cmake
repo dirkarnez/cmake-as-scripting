@@ -22,7 +22,7 @@ find_exe("git")
 
 message("Existing repository **name**:")
 input(REPO_NAME)
-message(${REPO_NAME})
+message("${REPO_NAME}")
 
 execute_process(
 	COMMAND git config --global credential.helper ""

@@ -14,7 +14,7 @@ endif()
 
 message("magnet link")
 input(magnet_link)
-message(${magnet_link})
+message("${magnet_link}")
 
 execute_process(
 	COMMAND aria2c --seed-time=0 ${magnet_link} -d "aria2c-downloads"  

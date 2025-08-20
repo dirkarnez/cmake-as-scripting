@@ -15,10 +15,10 @@ input(file)
 
 message("crf value (0 - 51, 0 is lossless, 23 is the default)")
 input(crf)
-message(${crf})
+message("${crf}")
 
 # file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message(${file})
+# message("${file}"")
 
 get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 

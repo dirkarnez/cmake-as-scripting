@@ -15,7 +15,7 @@ find_exe("git")
 
 message("Existing repository **URL**:")
 input(URL)
-message(${URL})
+message("${URL}")
 
 execute_process(
 	COMMAND git config --global credential.helper ""

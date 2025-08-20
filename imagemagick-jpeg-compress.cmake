@@ -12,11 +12,11 @@ endif()
 
 message("file name without .jpg extension")
 input(file)
-message(${file})
+message("${file}")
 
 message("percentage (100 is no compression)")
 input(percentage)
-message(${percentage})
+message("${percentage}")
 
 execute_process(
 	COMMAND convert "${file}" -quality ${percentage}% "${file}-compressed.jpg"

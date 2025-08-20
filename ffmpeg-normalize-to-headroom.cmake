@@ -12,11 +12,11 @@ endif()
 
 message("file")
 input(file)
-message(${file})
+message("${file}")
 
 message("DB (eg 0.5)")
 input(DB)
-message(${DB})
+message("${DB}")
 
 execute_process(
 	COMMAND ffmpeg -i "${file}" -af "volume=volume=${DB}dB:precision=fixed" output.wav

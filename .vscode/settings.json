@@ -1,0 +1,3 @@
+{
+    "git.path": "${env:USERPROFILE}\\Downloads\\PortableGit\\bin\\git.exe"
+}

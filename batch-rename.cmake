@@ -8,7 +8,7 @@ endif()
 
 message("Directory")
 input(DIRECTORY)
-message(${DIRECTORY})
+message("${DIRECTORY}")
 
 file(GLOB ALL_OF_MY_FILES LIST_DIRECTORIES false ${DIRECTORY}/*)
 

@@ -16,14 +16,14 @@ endif()
 
 message("File to upload")
 input(FILE_TO_UPLOAD)
-message(${FILE_TO_UPLOAD})
+message("${FILE_TO_UPLOAD}")
 
 execute_process(COMMAND base64
   ${FILE_TO_UPLOAD}
   RESULT_VARIABLE FILE_TO_UPLOAD_BASE64
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
-message(${FILE_TO_UPLOAD_BASE64})
+message("${FILE_TO_UPLOAD_BASE64}")
 
 # execute_process(COMMAND curl 
 # "-L" 

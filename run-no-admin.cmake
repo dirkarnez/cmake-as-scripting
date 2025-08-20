@@ -6,7 +6,7 @@ endif()
 
 message("Executable file")
 input(EXE)
-message(${EXE})
+message("${EXE}")
 
 
 execute_process(

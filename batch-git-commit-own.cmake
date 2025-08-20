@@ -15,11 +15,11 @@ message("Directory")
 input(DIRECTORY)
 
 file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-message(${DIRECTORY_NORMALIZED})
+message("${DIRECTORY_NORMALIZED}")
 
 message("Existing repository **name** without .git:")
 input(REPO_NAME)
-message(${REPO_NAME})
+message("${REPO_NAME}")
 
 execute_process(
     COMMAND git 

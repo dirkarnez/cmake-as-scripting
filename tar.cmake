@@ -6,8 +6,8 @@ endif()
 
 message("file")
 input(file)
+message("${file}")
 
-message(${file})
 
 # Check tar location, Windows' built-in tar:
 # tar -xf staticserver.zip  -C "123"

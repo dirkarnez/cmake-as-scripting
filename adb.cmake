@@ -10,7 +10,7 @@ set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}/Downloads/platform-tools-latest-wind
 
 message("Directory")
 input(DIRECTORY)
-message(${DIRECTORY})
+message("${DIRECTORY}")
 
 execute_process(
     COMMAND cmd

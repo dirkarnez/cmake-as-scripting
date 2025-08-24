@@ -22,7 +22,7 @@ foreach(file ${ALL_OF_MY_FLAC_FILES})
 	
 	execute_process(
 		COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
-		"$ENV{USERPROFILE}\\Downloads\\flac-1.4.2-win\\flac-1.4.2-win\\Win64\\flac.exe" 
+		"$ENV{SOFTWARE_DIR}\\flac-1.4.2-win\\flac-1.4.2-win\\Win64\\flac.exe" 
 		"-d" 
 		"${file}"
 		WORKING_DIRECTORY ${DIRECTORY})

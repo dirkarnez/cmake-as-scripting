@@ -4,6 +4,7 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
+# [Efficient PDF optimization with Ghostscript CLI | Transloadit](https://transloadit.com/devtips/efficient-pdf-optimization-with-ghostscript-cli/)
 message("%SOFTWARE_DIR%\\gs10051w64\\bin\\gswin64c.exe.exe -dSAFER -dBATCH -dNOPAUSE -dPDFSETTINGS=/ebook -sDEVICE=pdfwrite -dPreserveAnnots=false -sOutputFile=output.pdf input.pdf")
 
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/gs10051w64/bin/gswin64c.exe")

@@ -10,17 +10,21 @@ if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
 	# generate one
 endif()
 
-message("file")
-input(file)
+message("input file")
+input(INPUT_FILE)
+message("${INPUT_FILE}")
+
+message("file name (without .mp4)")
+input(FILE_NAME)
+message("${FILE_NAME}")
 
 # file(TO_CMAKE_PATH "${DIRECTORY}" DIRECTORY_NORMALIZED)
-# message("${file}")
 
-get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${file} NAME_WLE)
 
-set(ENV{PATH} "$ENV{SOFTWARE_DIR}\\ffmpeg-6.0-full_build-shared\\ffmpeg-6.0-full_build-shared\\bin")
+# get_filename_component(FILE_NAME_WITHOUT_EXTENSION ${INPUT_FILE} NAME_WLE)
+# message("${FILE_NAME_WITHOUT_EXTENSION}")
 
 execute_process(
-	COMMAND ffmpeg -i "${file}" "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp4"
+	COMMAND ffmpeg -i "${INPUT_FILE}" "${FILE_NAME}.mp4"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
 	OUTPUT_STRIP_TRAILING_WHITESPACE)

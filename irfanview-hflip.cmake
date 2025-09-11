@@ -11,6 +11,8 @@ if (IFRANVIEW_IS_FOUND STREQUAL "NOTFOUND")
 	# generate one
 endif()
 
+# [IrfanView Command Line Options - ETCwiki](https://www.etcwiki.org/wiki/IrfanView_Command_Line_Options)
+
 message("input_file")
 input(input_file)
 message("input_file ${input_file}")
@@ -20,9 +22,6 @@ input(output_file)
 message("output_file ${output_file}")
 
 execute_process(
-	COMMAND i_view64.exe "${input_file}" /hflip /convert="${output_file}"
+	COMMAND i_view64.exe ${input_file} /hflip /convert=${output_file}
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
 	
-# Windows: ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null NUL 
-# Linux: ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null /dev/null
-# The -vn, -sn, and -dn arguments instruct ffmpeg to ignore non-audio streams during this analysis. This drastically speeds up the analysis.

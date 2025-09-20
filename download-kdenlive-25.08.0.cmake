@@ -10,7 +10,7 @@ if (ENV_IS_FOUND STREQUAL "NOTFOUND")
 	# generate one
 endif()
 
-if(NOT EXISTS "$ENV{SOFTWARE_DIR}/kdenlive-25.08.0_standalone/bin/kdenlive.exe")
+if(NOT EXISTS "$ENV{SOFTWARE_DIR}/kdenlive-25.08.0_standalone/kdenlive-25.08.0_standalone/bin/kdenlive.exe")
   download_file_and_uncompress("https://mirrors.xtom.hk/kde/stable/kdenlive/25.08/windows/kdenlive-25.08.0_standalone.exe")
 else()
 	message("found kdenlive.exe")

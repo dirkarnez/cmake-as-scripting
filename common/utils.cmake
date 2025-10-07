@@ -141,7 +141,7 @@ function(download_file_and_run URL)
     endif()
 endfunction()
 
-function(download_file URL)
+function(download_file URL NAME)
     # get_filename_component(FILE_NAME_WITH_EXTENSION_TO_SAVE 
     #     ${URL}
     #     NAME)
@@ -158,12 +158,23 @@ function(download_file URL)
     #     INACTIVITY_TIMEOUT 5
     #     STATUS DOWNLOAD_STATUS_TUPLE)
 
-    execute_process(COMMAND curl ${URL}
+    if (NAME STREQUAL "")
+	execute_process(COMMAND curl ${URL}
         -L 
         -O
         -J
-        WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads
+        WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads"
         RESULT_VARIABLE DOWNLOAD_STATUS)
+    else()
+	execute_process(COMMAND curl ${URL}
+        -L 
+        --output ${NAME}
+        -J
+        WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads"
+        RESULT_VARIABLE DOWNLOAD_STATUS)
+    endif()
+
+
 
     message("")
 

@@ -1,3 +1,9 @@
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+	message("???")
+	# generate one
+endif()
+
 set(suffix "_download_link")
 # set(1_17_5${suffix} "https://go.dev/dl/go1.17.5.windows-amd64.zip")
 # set(1_21_0${suffix} "https://go.dev/dl/go1.21.0.windows-amd64.zip")
@@ -22,6 +28,18 @@ function(setup_cpp)
     #    message("go with version ${version} found")
     #endif()
 
+    include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+    if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+        message("???")
+        # generate one
+    endif()
+    
+    if(NOT EXISTS "$ENV{SOFTWARE_DIR}/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1/mingw64/bin/gcc.exe")
+        message("gcc not found, downloading")
+        download_file_and_uncompress("https://github.com/brechtsanders/winlibs_mingw/releases/download/11.2.0-12.0.1-9.0.0-r1/winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip")
+    else()
+        message("gcc found")
+    endif()
 
 # .
 # 	include(${CMAKE_CURRENT_SOURCE_DIR}/download-vscodium.cmake OPTIONAL RESULT_VARIABLE VSCODIUM_IS_FOUND)
@@ -51,8 +69,8 @@ function(setup_cpp)
 # 			WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\VSCodium-win32-x64-${TAG_NAME}\\bin")
 # 	endif()
     
-    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64")
-    set(ENV{PATH} "$ENV{PATH};$ENV{USERPROFILE}\\Downloads\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin")
+    set(ENV{PATH} "$ENV{PATH};$ENV{SOFTWARE_DIR}\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\\mingw64")
+    set(ENV{PATH} "$ENV{PATH};$ENV{SOFTWARE_DIR}\\winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1\\mingw64\\bin")
 
     #set(ENV{GOPATH} "P:\\Downloads\\gopath")
     #set(ENV{GOROOT} "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITHOUT_EXTENSION_FROM_URL}\\go")

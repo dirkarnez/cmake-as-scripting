@@ -12,12 +12,21 @@ function(input RETURN_VARIABLE)
 endfunction()
 
 function(pause_and_exit_error)
-execute_process(
-	COMMAND cmd /k "pause"
-	WORKING_DIRECTORY "$ENV{USERPROFILE}")
-    # string(STRIP ${TEMP} TEMP)
+  execute_process(
+    COMMAND cmd /k "pause"
+    WORKING_DIRECTORY "$ENV{USERPROFILE}")
+      # string(STRIP ${TEMP} TEMP)
 	message(FATAL_ERROR)
 endfunction()
+
+
+function(pause)
+  execute_process(
+    COMMAND cmd /k "pause"
+    WORKING_DIRECTORY "$ENV{USERPROFILE}")
+      # string(STRIP ${TEMP} TEMP)
+endfunction()
+
 
 function(sleep)
     execute_process(

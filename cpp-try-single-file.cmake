@@ -21,7 +21,10 @@ execute_process(
 	COMMAND g++ -static "${CPP_PATH}" -o "${CPP_FILE_NAME_WITHOUT_EXTENSION}.exe"
 	WORKING_DIRECTORY "${CPP_PATH_BASE_DIR}")
 	
+message("${CPP_PATH} is compiled ${CPP_FILE_NAME_WITHOUT_EXTENSION}.exe")
+
 execute_process(
 	COMMAND "${CPP_FILE_NAME_WITHOUT_EXTENSION}.exe"
 	WORKING_DIRECTORY "${CPP_PATH_BASE_DIR}")
-	
+
+pause()

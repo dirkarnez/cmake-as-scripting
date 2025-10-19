@@ -31,7 +31,7 @@ execute_process(
 	OUTPUT_STRIP_TRAILING_WHITESPACE)
 	
 message("remote.origin.url = ${REMOTE_ORIGIN_URL}")
-string(REGEX REPLACE "ghp_[^@]+" "${GIT_TOKEN}" REMOTE_ORIGIN_URL "${REMOTE_ORIGIN_URL}")
+string(REGEX REPLACE "dirkarnez:ghp_[^@]+" "dirkarnez:${GIT_TOKEN}" REMOTE_ORIGIN_URL "${REMOTE_ORIGIN_URL}")
 
 execute_process(
 	COMMAND git config user.name "dirkarnez"

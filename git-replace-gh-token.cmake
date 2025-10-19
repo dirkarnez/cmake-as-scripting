@@ -1,0 +1,60 @@
+include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake)
+
+if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
+    message(FATAL_ERROR "GIT_TOKEN not available")
+    # generate one
+endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+if (UTILS_IS_FOUND STREQUAL "NOT_FOUND")
+    message(FATAL_ERROR "???")
+    # generate one
+endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
+
+find_exe("git")
+
+message("Directory")
+input(DIRECTORY)
+
+if("${DIRECTORY}" STREQUAL ".")
+	set(DIRECTORY ${CMAKE_CURRENT_LIST_DIR})
+endif()
+
+message("${DIRECTORY}")
+
+execute_process(
+	COMMAND git config --get remote.origin.url
+	OUTPUT_VARIABLE REMOTE_ORIGIN_URL
+	WORKING_DIRECTORY "${DIRECTORY}"
+	OUTPUT_STRIP_TRAILING_WHITESPACE)
+	
+message("remote.origin.url = ${REMOTE_ORIGIN_URL}")
+string(REGEX REPLACE "ghp_[^@]+" "${GIT_TOKEN}" REMOTE_ORIGIN_URL "${REMOTE_ORIGIN_URL}")
+
+execute_process(
+	COMMAND git config user.name "dirkarnez"
+	WORKING_DIRECTORY "${DIRECTORY}")
+	
+execute_process(
+	COMMAND git config user.email "smalldirkalex@gmail.com"
+	WORKING_DIRECTORY "${DIRECTORY}")
+	
+execute_process(
+	COMMAND git config credential.helper ""
+	WORKING_DIRECTORY "${DIRECTORY}")
+	
+execute_process(
+	COMMAND git remote set-url origin ${REMOTE_ORIGIN_URL}
+	WORKING_DIRECTORY "${DIRECTORY}")
+	
+execute_process(
+	COMMAND git config --get remote.origin.url
+	OUTPUT_VARIABLE REMOTE_ORIGIN_URL
+	WORKING_DIRECTORY "${DIRECTORY}"
+	OUTPUT_STRIP_TRAILING_WHITESPACE)
+	
+message("remote.origin.url (updated) = ${REMOTE_ORIGIN_URL}")
+
+pause()

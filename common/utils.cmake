@@ -59,6 +59,8 @@ function(download_file_and_uncompress)
 	foreach(URL ${ARGV})
 		get_filename_from_url(${URL} FILE_NAME_WITH_EXTENSION_TO_SAVE)
 		
+		if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${FILE_NAME_WITH_EXTENSION_TO_SAVE}")
+		
 		message("Downloading ${FILE_NAME_WITH_EXTENSION_TO_SAVE}")
 				
 		execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec.bat 
@@ -82,6 +84,10 @@ function(download_file_and_uncompress)
 		#else()
 		#	message("NOT SUCCESS ${FILE_NAME_WITH_EXTENSION_TO_SAVE}")
 		# endif()
+		
+		else()
+      message("${FILE_NAME_WITH_EXTENSION_TO_SAVE} exists. No need to download")
+		endif()
 	endforeach()
 	
 	list(GET ARGV 0 FIRST_URL)

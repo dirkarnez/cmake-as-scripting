@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://github.com/dirkarnez/wechat-portable/releases/download/v3.9.12.57/wechat-portable-v3.9.12.57.zip")
+download_file_and_uncompress("https://github.com/dirkarnez/wechat-portable/releases/download/v4.1.2.18/wechat-portable-v4.1.2.18.zip")

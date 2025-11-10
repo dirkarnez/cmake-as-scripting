@@ -107,7 +107,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS 
         message(FATAL_ERROR "NODE_IS_FOUND: ${NODE_IS_FOUND}")
     endif()
 
-    setup_node("18.18.0")
+    setup_node("24.11.0")
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/src/main.cpp")

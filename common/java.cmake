@@ -1,0 +1,21 @@
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "UTILS_IS_FOUND: ${UTILS_IS_FOUND}")
+endif()
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+endif()
+
+function(setup_jdk)
+    # include(${CMAKE_CURRENT_SOURCE_DIR}/download-jdk-8.cmake OPTIONAL RESULT_VARIABLE JDK8_IS_FOUND)
+    # if (JDK8_IS_FOUND STREQUAL "NOTFOUND")
+    #     message(FATAL_ERROR "JDK8_IS_FOUND: ${JDK8_IS_FOUND}")
+    # endif()
+    
+    include(${CMAKE_CURRENT_SOURCE_DIR}/download-jdk-21.cmake OPTIONAL RESULT_VARIABLE JDK21_IS_FOUND)
+    if (JDK21_IS_FOUND STREQUAL "NOTFOUND")
+        message(FATAL_ERROR "JDK21_IS_FOUND: ${JDK21_IS_FOUND}")
+    endif()
+endfunction()

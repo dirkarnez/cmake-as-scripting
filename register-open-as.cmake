@@ -9,8 +9,8 @@ if("${CURRENT_USER}" STREQUAL "administrator\\administrator")
 	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_PATH "D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin\\cmake.exe")
 	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_GUI_PATH "D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin\\cmake-gui.exe")
 else()
-	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_PATH "$ENV{USERPROFILE}\\Downloads\\cmake-3.29.3-windows-x86_64\\bin\\cmake.exe")
-	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_GUI_PATH "$ENV{USERPROFILE}\\Downloads\\cmake-3.29.3-windows-x86_64\\bin\\cmake-gui.exe")
+	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_PATH "$ENV{USERPROFILE}\\Downloads\\cmake-3.29.3-windows-x86_64\\cmake-3.29.3-windows-x86_64\\bin\\cmake.exe")
+	string(REPLACE "\\" "\\\\" CMAKE_CMAKE_GUI_PATH "$ENV{USERPROFILE}\\Downloads\\cmake-3.29.3-windows-x86_64\\cmake-3.29.3-windows-x86_64\\bin\\cmake-gui.exe")
 endif()
 
 

@@ -1,4 +1,4 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
 if (ENV_IS_FOUND STREQUAL "NOTFOUND")
 	message("???")
 	# generate one
@@ -28,7 +28,7 @@ function(setup_cpp)
     #    message("go with version ${version} found")
     #endif()
 
-    include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+    include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
     if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
         message("???")
         # generate one
@@ -49,7 +49,7 @@ function(setup_cpp)
 # 	endif()
 # 	
 # 	if(EXISTS "$ENV{USERPROFILE}/Downloads/VSCodium-win32-x64-${TAG_NAME}/VSCodium.exe")
-# 		include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+# 		include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 # 		if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
 # 			message("???")
 # 			# generate one

@@ -1,10 +1,10 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message("???")
     # generate one
 endif()
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
 if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
 	message("???")
 	# generate one
@@ -21,7 +21,7 @@ foreach(file ${ALL_OF_MY_FILES})
 	message("${file}")
 	
 	# execute_process(
-	# 	COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+	# 	COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec-detached.bat 
 	# 	"$ENV{USERPROFILE}\\Downloads\\flac-1.4.2-win\\flac-1.4.2-win\\Win64\\flac.exe" 
 	# 	"-d" 
 	# 	"${file}"

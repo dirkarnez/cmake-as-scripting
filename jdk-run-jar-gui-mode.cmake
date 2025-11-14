@@ -1,4 +1,4 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
 if (ENV_IS_FOUND STREQUAL "NOTFOUND")
 	message("???")
 	# generate one
@@ -24,7 +24,7 @@ message("${JAR_PATH}")
 # endif()
 
 
-execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec.bat 
+execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat 
   javaw.exe 
   -jar 
   ${JAR_PATH}

@@ -8,7 +8,7 @@
 
 # "{\"owner\":\"dirkarnez\",\"name\":\"${NEW_REPO_NAME}\"}"
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
 if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     message("???")
     # generate one
@@ -20,8 +20,7 @@ message("${FILE_TO_UPLOAD}")
 
 execute_process(COMMAND base64
   ${FILE_TO_UPLOAD}
-  RESULT_VARIABLE FILE_TO_UPLOAD_BASE64
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+  RESULT_VARIABLE FILE_TO_UPLOAD_BASE64)
 
 message("${FILE_TO_UPLOAD_BASE64}")
 
@@ -33,9 +32,7 @@ message("${FILE_TO_UPLOAD_BASE64}")
 # "-H" "X-GitHub-Api-Version: 2022-11-28"
 # "https://api.github.com/repos/dirkarnez/gittest/contents/20201014180756916.png"
 # "-d"
-# "@./temp.json"
-# WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# "@./temp.json")
 
 # execute_process(COMMAND rm 
-# "./temp.json"
-# WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+# "./temp.json")

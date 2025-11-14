@@ -1,4 +1,4 @@
-include(${CMAKE_CURRENT_SOURCE_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
+include(${CMAKE_CURRENT_LIST_DIR}/common/ffmpeg.cmake OPTIONAL RESULT_VARIABLE FFMPEG_IS_FOUND)
 if (FFMPEG_IS_FOUND STREQUAL "NOTFOUND")
 	message("???")
 	# generate one

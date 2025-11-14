@@ -51,7 +51,7 @@ function(get_filename_from_url_without_extension URL RETURN_VARIABLE)
 endfunction()
 
 function(download_file_and_uncompress)
-    include("${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake" OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+    include("${CMAKE_CURRENT_LIST_DIR}/common/env.cmake" OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
     if (ENV_IS_FOUND STREQUAL "NOTFOUND")
         message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
     endif()
@@ -63,7 +63,7 @@ function(download_file_and_uncompress)
 		
 		message("Downloading ${FILE_NAME_WITH_EXTENSION_TO_SAVE}")
 				
-		execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec.bat 
+		execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat 
 			curl ${URL}
 			-L 
 			-O
@@ -128,12 +128,12 @@ function(download_file_and_run URL)
 
     # get_filename_from_url(${URL} FILE_NAME_WITH_EXTENSION_TO_SAVE)
 
-    include("${CMAKE_CURRENT_SOURCE_DIR}/common/env.cmake" OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+    include("${CMAKE_CURRENT_LIST_DIR}/common/env.cmake" OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
     if (ENV_IS_FOUND STREQUAL "NOTFOUND")
         message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
     endif()
 
-    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec.bat 
+    execute_process(COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec.bat 
         curl ${URL}
         -L 
         -O
@@ -148,7 +148,7 @@ function(download_file_and_run URL)
     if ("${DOWNLOAD_STATUS}" EQUAL "0")
         message("SUCCESS!")
         # execute_process(
-        #     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+        #     COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec-detached.bat 
         #     "${DOWNLOAD_LOCATION}" 
         #     WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
     else()
@@ -198,7 +198,7 @@ function(download_file URL NAME)
     if ("${DOWNLOAD_STATUS}" EQUAL "0")
         message("SUCCESS!")
         # execute_process(
-        #     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/common/exec-detached.bat 
+        #     COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec-detached.bat 
         #     "${DOWNLOAD_LOCATION}" 
         #     WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads)
     else()

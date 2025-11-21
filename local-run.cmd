@@ -1,9 +1,9 @@
 REM run as Administrator
+
 @echo off
 cd /d %~dp0
 set DOWNLOADS_DIR=%USERPROFILE%\Downloads
 set DOWNLOADS_DIR_LINUX=%DOWNLOADS_DIR:\=/%
-
 
 for /f "tokens=*" %%a in ('C:\Windows\System32\whoami.exe') do (
     set output=%%a

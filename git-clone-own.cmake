@@ -135,7 +135,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/requirements.txt" OR EXI
         message(FATAL_ERROR "PYTHON_IS_FOUND: ${PYTHON_IS_FOUND}")
     endif()
 
-    setup_python("3.10.8")
+    setup_python("3.13.9")
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.tex")

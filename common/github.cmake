@@ -1,12 +1,12 @@
 function(new_repo from_template)    
-    include(${CMAKE_CURRENT_LIST_DIR}/common/secrets.cmake)
+    include(${CMAKE_CURRENT_FUNCTION_LIST_DIR}/secrets.cmake)
 
     if(NOT DEFINED GIT_TOKEN)
         message("???")
         # generate one
     endif()
 
-    include(${CMAKE_CURRENT_LIST_DIR}/common/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
+    include(${CMAKE_CURRENT_FUNCTION_LIST_DIR}/utils.cmake OPTIONAL RESULT_VARIABLE UTILS_IS_FOUND)
     if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
         message("???")
         # generate one

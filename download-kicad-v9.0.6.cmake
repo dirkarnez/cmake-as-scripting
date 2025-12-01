@@ -4,4 +4,4 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://github.com/dirkarnez/kicad-portable/releases/download/v8.0.6/kicad-portable-v8.0.6.zip")
+download_file_and_uncompress("https://github.com/dirkarnez/kicad-portable/releases/download/v9.0.6/kicad-portable-v9.0.6.zip")

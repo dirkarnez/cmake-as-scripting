@@ -9,7 +9,11 @@ if (SECRETS_IS_FOUND STREQUAL "NOTFOUND")
     pause_and_exit_error()
 endif()
 
-include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/common/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+    message("env.cmake not available")
+    pause_and_exit_error()
+endif()
 
 if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
     message("GIT_TOKEN not available")
@@ -179,10 +183,10 @@ if (START_VSCODE)
     if (VSCODE_IS_FOUND STREQUAL "NOTFOUND")
         message(FATAL_ERROR "VSCODE_IS_FOUND: ${VSCODE_IS_FOUND}")
     endif()
-        
+
     execute_process(
         COMMAND ${CMAKE_CURRENT_LIST_DIR}/common/exec-detached.bat 
         ${VSCODE}
         "."
-        WORKING_DIRECTORY "$ENV{USERPROFILE}\\Downloads\\${REPO_NAME}")
+        WORKING_DIRECTORY "$ENV{SOFTWARE_DIR}\\${REPO_NAME}")
 endif()

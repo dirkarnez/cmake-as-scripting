@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-vscode.cmake-tools",
-        "emmanuelbeziat.vscode-great-icons"
+        "emmanuelbeziat.vscode-great-icons",
+        "ms-azuretools.vscode-containers"
     ]
 }

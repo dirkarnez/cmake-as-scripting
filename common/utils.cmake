@@ -1,3 +1,8 @@
+include(${CMAKE_CURRENT_LIST_DIR}/env.cmake OPTIONAL RESULT_VARIABLE ENV_IS_FOUND)
+if (ENV_IS_FOUND STREQUAL "NOTFOUND")
+    message(FATAL_ERROR "ENV_IS_FOUND: ${ENV_IS_FOUND}")
+endif()
+
 function(input RETURN_VARIABLE)
 	execute_process(
 		COMMAND ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/readinput.bat
@@ -98,9 +103,11 @@ function(download_file_and_uncompress)
 			${FIRST_URL}
 			NAME_WLE)
 
+    message("Running zip under $ENV{SOFTWARE_DIR}")
+
 	execute_process(COMMAND C:\\PROGRA~1\\7-Zip\\7z.exe 
 		x "$ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITH_EXTENSION_TO_SAVE}" -o${FILE_NAME_WITHOUT_EXTENSION} -y
-		WORKING_DIRECTORY $ENV{SOFTWARE_DIR})
+		WORKING_DIRECTORY "$ENV{SOFTWARE_DIR}")
 	
 	# file(ARCHIVE_EXTRACT 
 	#	INPUT $ENV{USERPROFILE}\\Downloads\\${FILE_NAME_WITH_EXTENSION_TO_SAVE}

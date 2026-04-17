@@ -22,6 +22,7 @@ message("crf value (0 - 51, 0 is lossless, 23 is the default)")
 input(crf)
 message("${crf}")
 
+# -vf "transpose=clock,transpose=clock"
 execute_process(
  	COMMAND ffmpeg -i "${file}" -crf ${crf} "${FILE_NAME_WITHOUT_EXTENSION}-converted.mp4"
 	WORKING_DIRECTORY $ENV{USERPROFILE}/Downloads

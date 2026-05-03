@@ -24,6 +24,9 @@ execute_process(
 execute_process(
 	COMMAND git 
 	clone
+	--branch main
+	--depth 1
+	--recurse-submodules
 	"${URL}"
 	WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
 

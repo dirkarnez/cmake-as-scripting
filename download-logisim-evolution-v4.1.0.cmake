@@ -18,7 +18,7 @@ endif()
 
 setup_jdk()
 
-download_file("https://github.com/logisim-evolution/logisim-evolution/releases/download/v4.0.0/logisim-evolution-4.0.0-all.jar" "logisim-evolution-4.0.0-all.jar")
+download_file("https://github.com/logisim-evolution/logisim-evolution/releases/download/v4.1.0/logisim-evolution-4.1.0-all.jar" "logisim-evolution-4.0.0-all.jar")
 
 set(ENV{PATH} "$ENV{SOFTWARE_DIR}\\OpenJDK21U-jdk_x64_windows_hotspot_21.0.6_7\\jdk-21.0.6+7\\bin")
 

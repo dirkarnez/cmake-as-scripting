@@ -29,9 +29,13 @@ endif()
 
 # portable mode
 file(MAKE_DIRECTORY "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\data")
+
 # data\user-data\User\settings.json
 # {
+#    "idf.hasWalkthroughBeenShown": true,
+#    "workbench.colorTheme": "Dark Modern",
 #    "git.path": "D:\\Softwares\\PortableGit\\bin\\git.exe"
+# "git.path": "${env:USERPROFILE}\\Downloads\\PortableGit\\bin\\git.exe"
 # }
 
 set(VSCODE "$ENV{SOFTWARE_DIR}\\${FILE_NAME_WITHOUT_EXTENSION}\\Code.exe")

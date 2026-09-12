@@ -4,4 +4,5 @@ if (UTILS_IS_FOUND STREQUAL "NOTFOUND")
     # generate one
 endif()
 
-download_file_and_uncompress("https://edgedl.me.gvt1.com/edgedl/android/studio/ide-zips/2025.2.2.7/android-studio-2025.2.2.7-windows.zip")
+# https://developer.android.com/studio#get-android-studio
+download_file_and_uncompress("https://edgedl.me.gvt1.com/android/studio/ide-zips/2026.1.4.7/android-studio-quail4-windows.zip")

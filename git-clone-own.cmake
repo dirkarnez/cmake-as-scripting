@@ -15,12 +15,12 @@ if (ENV_IS_FOUND STREQUAL "NOTFOUND")
     pause_and_exit_error()
 endif()
 
-if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
-    message("GIT_TOKEN not available")
-    pause_and_exit_error()
-else()
-    message("GIT_TOKEN ${GIT_TOKEN}")
-endif()
+# if(NOT DEFINED GIT_TOKEN OR "${GIT_TOKEN}" STREQUAL "")
+#     message("GIT_TOKEN not available")
+#     pause_and_exit_error()
+# else()
+#     message("GIT_TOKEN ${GIT_TOKEN}")
+# endif()
 
 find_exe("git")
 

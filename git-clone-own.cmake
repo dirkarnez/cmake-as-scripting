@@ -28,6 +28,12 @@ message("Existing repository **name**:")
 input(REPO_NAME)
 message("${REPO_NAME}")
 
+
+message("Existing FGTOKEN:")
+input(FGTOKEN)
+message("${FGTOKEN}")
+
+
 execute_process(
     COMMAND git config --global credential.helper ""
     WORKING_DIRECTORY "$ENV{USERPROFILE}")
@@ -56,7 +62,7 @@ if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
         COMMAND git 
         clone
         --recurse-submodules 
-        "https://dirkarnez:${GIT_TOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
+        "https://dirkarnez:${FGTOKEN}@github.com/dirkarnez/${REPO_NAME}.git"
         RESULT_VARIABLE IS_OK
         WORKING_DIRECTORY "$ENV{USERPROFILE}/Downloads")
     if(NOT "${IS_OK}" STREQUAL "0")
@@ -104,7 +110,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/go.mod" OR EXISTS "$ENV{
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.js" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.js")
-        message(STATUS "Node.js project")
+    message(STATUS "Node.js project")
     
     include(${CMAKE_CURRENT_LIST_DIR}/common/node.cmake OPTIONAL RESULT_VARIABLE NODE_IS_FOUND)
     if (NODE_IS_FOUND STREQUAL "NOTFOUND")
@@ -115,7 +121,8 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/package.json" OR EXISTS 
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/CMakeLists.txt" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/src/main.cpp")
-        message(STATUS "CMake project")
+    message(STATUS "CMake project")
+    
     include(${CMAKE_CURRENT_LIST_DIR}/common/cpp.cmake OPTIONAL RESULT_VARIABLE CPP_IS_FOUND)
     if (CPP_IS_FOUND STREQUAL "NOTFOUND")
         message(FATAL_ERROR "CPP_IS_FOUND: ${CPP_IS_FOUND}")
@@ -150,7 +157,7 @@ elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.tex")
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/index.html")
-        message(STATUS "HTML project")
+    message(STATUS "HTML project")
     
     set(START_VSCODE TRUE)
 elseif(EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main/main.ino" OR EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}/main.ino")

@@ -14,24 +14,24 @@ set(DOWNLOADS_DIR "$ENV{USERPROFILE}\\Downloads")
 
 set(ENV{PATH} "$ENV{PATH};C:\\Windows\\System32")
 
-if("${CURRENT_USER}" STREQUAL "administrator\\administrator")
-	message("My notebook")
- 
-	set(ENV{SOFTWARE_DIR} "D:\\Softwares")
-	
-	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
-	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\bin")
-	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\usr\\bin")
-	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin")
-	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\curl-8.7.1_9-win64-mingw\\bin")
-else()
-	if("${DOMAIN}" STREQUAL "hh\\")
-		message("in school")
-	endif()
-
-	if("${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
-		message("in stemex notebook")
-	endif()
+# if("${CURRENT_USER}" STREQUAL "administrator\\administrator")
+# 	message("My notebook")
+#  
+# 	set(ENV{SOFTWARE_DIR} "D:\\Softwares")
+# 	
+# 	set(ENV{PATH} "$ENV{PATH};${DOWNLOADS_DIR}")
+# 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\bin")
+# 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\PortableGit\\usr\\bin")
+# 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\cmake-3.29.3-windows-x86_64\\bin")
+# 	set(ENV{PATH} "$ENV{PATH};D:\\Softwares\\curl-8.7.1_9-win64-mingw\\bin")
+# else()
+# 	if("${DOMAIN}" STREQUAL "hh\\")
+# 		message("in school")
+# 	endif()
+# 
+# 	if("${CURRENT_USER}" STREQUAL "laptop-6bjc4eto\\stude")
+# 		message("in stemex notebook")
+# 	endif()
 
 	set(ENV{SOFTWARE_DIR} "${DOWNLOADS_DIR}")
   
@@ -57,4 +57,4 @@ else()
 	message("$ENV{PATH}")
 	# message("$ENV{VSCODE_EXTENSION_PATH}")
 	# message("$ENV{VSCODE_USER_DATA_PATH}")
-endif()
+# endif()

@@ -28,19 +28,17 @@ message("Existing repository **name**:")
 input(REPO_NAME)
 message("${REPO_NAME}")
 
-
-message("Existing FGTOKEN:")
-input(FGTOKEN)
-message("${FGTOKEN}")
-
-
 execute_process(
     COMMAND git config --global credential.helper ""
     WORKING_DIRECTORY "$ENV{USERPROFILE}")
     
 if(NOT EXISTS "$ENV{USERPROFILE}/Downloads/${REPO_NAME}")
     message("Not exists, cloning...")
-    
+
+    message("Existing FGTOKEN:")
+    input(FGTOKEN)
+    message("${FGTOKEN}")
+
     execute_process(
         COMMAND git 
         config
